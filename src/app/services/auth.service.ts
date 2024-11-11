@@ -108,7 +108,7 @@ export class AuthService {
         await this.deleteAuthUser();
       }
 
-      await this.router.navigate(['/login']);
+      await this.router.navigate(['/ingresar']);
       return true;
     } catch (error) {
       showAlertError('AuthService.logout', error);

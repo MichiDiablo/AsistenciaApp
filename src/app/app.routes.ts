@@ -5,12 +5,12 @@ import { homeGuard } from './guards/home.guard';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'ingresar',
     pathMatch: 'full',
   },
   {
-    path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage),
+    path: 'ingresar',
+    loadComponent: () => import('./pages/ingresar/ingresar.page').then( m => m.LoginPage),
     canActivate: [loginGuard]
   },
   {
@@ -25,8 +25,5 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage)
   },
-  {
-    path: 'ingresar',
-    loadComponent: () => import('./pages/ingresar/ingresar.page').then( m => m.IngresarPage)
-  },
+  
 ];

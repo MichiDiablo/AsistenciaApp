@@ -23,11 +23,41 @@ import { AuthService } from 'src/app/services/auth.service';
     , LanguageComponent // CGV-Lista de idiomas
   ]
 })
-export class IngresarPage implements OnInit {
+export class LoginPage implements ViewWillEnter {
 
-  constructor() { }
+  @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
 
-  ngOnInit() {
+  correo: string;
+  password: string;
+
+  constructor(
+      private router: Router
+    , private translate: TranslateService
+    , private authService: AuthService) 
+  { 
+    this.correo = 'atorres';
+    this.password = '1234';
+    addIcons({ colorWandOutline }); 
+  }
+
+  async ionViewWillEnter() {
+    this.selectLanguage.setCurrentLanguage();
+  }
+
+  navigateTheme() {
+    this.router.navigate(['/theme']);
+  }
+
+  login() {
+    this.authService.login(this.correo, this.password);
+  }
+
+  registerNewUser() {
+
+  }
+
+  passwordRecovery() {
+    
   }
 
 }
