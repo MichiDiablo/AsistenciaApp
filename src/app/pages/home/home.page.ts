@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { QrWebScannerComponent } from 'src/app/components/qr-web-scanner/qr-web-scanner.component';
-import { Dinosaur } from 'src/app/model/dinosaur';
+import { QrData } from 'src/app/model/qrdata';
 import { Capacitor } from '@capacitor/core';
 import { ScannerService } from 'src/app/services/scanner.service';
 import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
@@ -40,7 +40,7 @@ export class HomePage {
   async headerClick(button: string) {
 
     if (button === 'testqr')
-      this.showDinoComponent(Dinosaur.jsonDinoExample);
+      this.showDinoComponent(QrData.jsonqrExample);
 
     if (button === 'scan' && Capacitor.getPlatform() === 'web')
       this.selectedComponent = 'qrwebscanner';
@@ -59,7 +59,7 @@ export class HomePage {
 
   showDinoComponent(qr: string) {
 
-    if (Dinosaur.isValidDinosaurQrCode(qr)) {
+    if (QrData.isValidDinosaurQrCode(qr)) {
       this.auth.qrCodeData.next(qr);
       this.changeComponent('dinosaur');
       return;

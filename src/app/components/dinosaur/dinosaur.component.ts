@@ -14,12 +14,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DinosaurComponent implements OnDestroy {
 
-  dino: any;
+  qr: any;
   private subscription: Subscription;
 
   constructor(private authService: AuthService) { 
     this.subscription = this.authService.qrCodeData.subscribe((qr) => {
-      this.dino = qr? JSON.parse(qr): null;
+      this.qr = qr? JSON.parse(qr): null;
     })
   }
   

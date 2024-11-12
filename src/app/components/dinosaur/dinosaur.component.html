@@ -1,43 +1,51 @@
 <ion-content>
 
-  <div class="background-image" *ngIf="dino"></div>
+  <div class="background-image" *ngIf="qr"></div>
 
-  <ion-grid fixed *ngIf="dino" class="dino-content">
+  <ion-grid fixed *ngIf="qr" class="qr-content">
     <ion-row>
-      <ion-col size="5">Name</ion-col>
-      <ion-col size="7">{{ dino.name }}</ion-col>
+      <ion-col size="5">Sede: </ion-col>
+      <ion-col size="7">{{ qr.sede }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Length</ion-col>
-      <ion-col size="7">{{ dino.length }}</ion-col>
+      <ion-col size="5">Id Asignatura: </ion-col>
+      <ion-col size="7">{{ qr.idAsignatura }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Height</ion-col>
-      <ion-col size="7">{{ dino.height }}</ion-col>
+      <ion-col size="5">Seccion: </ion-col>
+      <ion-col size="7">{{ qr.seccion }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Weight</ion-col>
-      <ion-col size="7">{{ dino.weight }}</ion-col>
+      <ion-col size="5">Nombre Asignatura: </ion-col>
+      <ion-col size="7">{{ qr.nombreAsignatura }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Diet</ion-col>
-      <ion-col size="7">{{ dino.diet }}</ion-col>
+      <ion-col size="5">Profesor: </ion-col>
+      <ion-col size="7">{{ qr.nombreProfesor }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Period</ion-col>
-      <ion-col size="7">{{ dino.period }}</ion-col>
+      <ion-col size="5">Dia: </ion-col>
+      <ion-col size="7">{{ qr.dia }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Extinction</ion-col>
-      <ion-col size="7">{{ dino.extinction }}</ion-col>
+      <ion-col size="5">Bloque Inicio: </ion-col>
+      <ion-col size="7">{{ qr.bloqueInicio }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Found</ion-col>
-      <ion-col size="7">{{ dino.found }}</ion-col>
+      <ion-col size="5">Bloque Termino: </ion-col>
+      <ion-col size="7">{{ qr.bloqueTermino }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5">Hora de inicio: </ion-col>
+      <ion-col size="7">{{ qr.horaInicio }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5">Hora de termino: </ion-col>
+      <ion-col size="7">{{ qr.horaFin }}</ion-col>
     </ion-row>
   </ion-grid>
 
-  <div *ngIf="!dino" class="center-frame">
+  <div *ngIf="!qr" class="center-frame">
     <div class="picture-frame ion-text-center">
       <img class="you-must-scan" src="/assets/images/you-must-scan.png">
     </div>
