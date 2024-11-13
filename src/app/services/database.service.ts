@@ -88,7 +88,7 @@ export class DatabaseService {
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
   `;
 
-  dataBaseName = 'DinosaurDataBase';
+  dataBaseName = 'AsistenciaDataBase';
   db!: SQLiteDBConnection;
   userList: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 

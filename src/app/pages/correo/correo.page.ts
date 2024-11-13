@@ -28,7 +28,6 @@ export class CorreoPage implements ViewWillEnter {
   @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
 
   correo: string = '';
-  email: any;
   isLoading: boolean = false;
 
   constructor(
@@ -50,16 +49,18 @@ export class CorreoPage implements ViewWillEnter {
   }
 
   enter() {
-    if (this.email.trim() === 'pepetapia@gmail.com') {
+    if (this.correo.trim() === 'pepetapia@gmail.com') {
       console.log('Por favor, ingrese su cuenta.');
       return;
     }
 
     this.isLoading = true;
-    console.log('Cuenta ingresada:', this.email);
+    console.log('Cuenta ingresada:', this.correo);
     setTimeout(() => {
       this.isLoading = false;
     }, 2000); 
+
+    
   }
 
   iniciarSesion() {
