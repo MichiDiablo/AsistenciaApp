@@ -11,9 +11,9 @@ import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-correo',
+  templateUrl: './correo.page.html',
+  styleUrls: ['./correo.page.scss'],
   standalone: true,
   imports: [
       CommonModule            // CGV-Permite usar directivas comunes de Angular
@@ -23,32 +23,20 @@ import { AuthService } from 'src/app/services/auth.service';
     , LanguageComponent // CGV-Lista de idiomas
   ]
 })
-export class LoginPage implements ViewWillEnter {
-
-  /** 
-   * CGV-INI-Traducciones
-   * Para poder utilizar la traducción de textos, se debe:
-   *   1. Ejecutar: npm i @ngx-translate/core 
-   *   2. Ejecutar: npm i @ngx-translate/http-loader
-   *   3. Crear carpeta: src/app/assets/i18n
-   *   4. Crear archivo: src/app/assets/i18n/es.json para los textos en español
-   *   5. Crear archivo: src/app/assets/i18n/en.json para los textos en inglés
-   * 
-   * CGV-FIN-Traducciones
-  */ 
+export class CorreoPage implements ViewWillEnter {
 
   @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
 
-  correo: string;
-  password: string;
+  correo: string = '';
+  email: any;
+  isLoading: boolean = false;
 
   constructor(
       private router: Router
     , private translate: TranslateService
     , private authService: AuthService) 
   { 
-    this.correo = 'atorres';
-    this.password = '1234';
+    this.correo = 'atorres@duocuc.cl';
     // Los iconos deben ser agregados a uno (ver en https://ionic.io/ionicons)
     addIcons({ colorWandOutline }); 
   }
@@ -61,16 +49,21 @@ export class LoginPage implements ViewWillEnter {
     this.router.navigate(['/theme']);
   }
 
-  login() {
-    this.authService.login(this.correo, this.password);
+  enter() {
+    if (this.email.trim() === 'pepetapia@gmail.com') {
+      console.log('Por favor, ingrese su cuenta.');
+      return;
+    }
+
+    this.isLoading = true;
+    console.log('Cuenta ingresada:', this.email);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000); 
   }
 
-  registerNewUser() {
-
-  }
-
-  olvideContrasena(){
-    this.router.navigate(['/correo']);
+  iniciarSesion() {
+    this.router.navigate(['/ingresar']);
   }
 
 }
