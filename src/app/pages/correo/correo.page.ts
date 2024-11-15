@@ -79,7 +79,8 @@ export class CorreoPage implements ViewWillEnter {
   // }
   async buscarEmail(email: string): Promise<void> {
     try {
-      const user = await this.db.findUserByEmail(email);
+      const user = await this.db.findUserByEmail(email); // Usa '=' en lugar de '==='
+      console.log(user);
   
       if (user) {
         const navigationExtras: NavigationExtras = {
@@ -88,13 +89,10 @@ export class CorreoPage implements ViewWillEnter {
         await this.router.navigate(['pregunta'], navigationExtras);
       } else {
         showToast('No existe una cuenta registrada con ese correo.');
-        await this.router.navigate(['incorrecto']);
       }
     } catch (error) {
-      // debugger;
-      // console.log('22')
-      showAlertError('', error);
+      showAlertError('CorreoPage.buscarEmail', error);
     }
   }
-
+  
 }

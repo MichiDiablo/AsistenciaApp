@@ -21,20 +21,23 @@ export class PreguntaPage {
     const navigation = this.router.getCurrentNavigation();
     if (navigation && navigation.extras && navigation.extras.state) {
       this.user = navigation.extras.state['user'];
-      this.pregunta = this.user.secretQuestion;
+      this.pregunta = navigation.extras.state['pregunta']
+      console.log('Usuario cargado:', this.user);
+      console.log('Pregunta de seguridad:', this.pregunta);
+    } else {
+      console.error('No se encontraron datos del usuario en la navegación');
     }
   }
+  
 
   verificarRespuesta() {
-    // Lógica para verificar la respuesta ingresada por el usuario
-    if (this.respuesta.trim().toLowerCase() === this.user.secretAnswer.trim().toLowerCase()) {
-      console.log('Respuesta correcta');
-      // Redirigir o mostrar un mensaje de éxito
-      this.router.navigate(['/pages/correcto']);
-    } else {
-      console.log('Respuesta incorrecta');
-      this.router.navigate(['/pages/incorrecto']);
-      // Mostrar un mensaje de error
-    }
+  if (this.respuesta.trim().toLowerCase() === this.user.secretAnswer.trim().toLowerCase()) {
+    console.log('Respuesta correcta');
+    this.router.navigate(['/pages/correcto']);
+  } else {
+    console.log('Respuesta incorrecta');
+    this.router.navigate(['/pages/incorrecto']);
   }
+}
+
 }
