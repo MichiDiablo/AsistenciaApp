@@ -1,13 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>incorrecto</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content class="ion-padding">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">incorrecto</ion-title>
+      <ion-title>Error de Autenticación</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="content ion-text-center">
+    <ion-icon name="close-circle-outline" size="large" color="danger"></ion-icon>
+    <h2>¡Lo sentimos, ocurrió un error!</h2>
+    <p>Tu correo o contraseña son incorrectos. Por favor, intenta nuevamente.</p>
+    
+    <ion-button expand="full" color="danger" (click)="volverIntentar()">
+      Intentar de Nuevo
+    </ion-button>
+  </div>
 </ion-content>

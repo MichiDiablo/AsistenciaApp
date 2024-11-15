@@ -11,7 +11,8 @@ import { colorWandOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/model/user';
-import { showAlertError } from 'src/app/tools/message-functions';
+import { showAlertError, showToast } from 'src/app/tools/message-functions';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-correo',
@@ -38,7 +39,7 @@ export class CorreoPage implements ViewWillEnter {
       private router: Router
     , private translate: TranslateService
     , private authService: AuthService
-    , private dataBaseService: DatabaseService) 
+    , private db: DatabaseService) 
   { 
     this.correo = 'atorres@duocuc.cl';
     // Los iconos deben ser agregados a uno (ver en https://ionic.io/ionicons)
@@ -53,27 +54,46 @@ export class CorreoPage implements ViewWillEnter {
     this.router.navigate(['/theme']);
   }
 
-  async findByEmail(email: string): Promise<User | undefined>  {
-    console.log(email);
-    this.recuperarContrasena();
-    return await this.dataBaseService.findUserByEmail(email);
+  // async findByEmail(email: string): Promise<User | undefined>  {
+  //   console.log(email);
+  //   this.recuperarContrasena(email);
+  //   return await this.db.findUserByEmail(email);
 
-  }
+  // }
 
   iniciarSesion() {
     this.router.navigate(['/ingresar']);
   }
 
-  async recuperarContrasena() {
-    this.isLoading = true;
-    try {
-      await this.authService.recuperarContrasena(this.correo);
-    } catch (error) {
-      console.log(error);
+  // async recuperarContrasena() {
+  //   this.isLoading = true;
+  //   try {
+  //     await this.authService.recuperarContrasena(this.correo);
+  //   } catch (error) {
+  //     console.log(error);
       
-      showAlertError('CorreoPage.recuperarContrasena', error);
-    } finally {
-      this.isLoading = false;
+  //     showAlertError('CorreoPage.recuperarContrasena', error);
+  //   } finally {
+  //     this.isLoading = false;
+  //   }
+  // }
+  async buscarEmail(email: string): Promise<void> {
+    try {
+      const user = await this.db.findUserByEmail(email);
+  
+      if (user) {
+        const navigationExtras: NavigationExtras = {
+          state: { usuario: user }
+        };
+        await this.router.navigate(['pregunta'], navigationExtras);
+      } else {
+        showToast('No existe una cuenta registrada con ese correo.');
+        await this.router.navigate(['incorrecto']);
+      }
+    } catch (error) {
+      // debugger;
+      // console.log('22')
+      showAlertError('', error);
     }
   }
 

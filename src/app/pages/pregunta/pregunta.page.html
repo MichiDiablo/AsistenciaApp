@@ -1,13 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>pregunta</ion-title>
+    <ion-title>Pregunta de Seguridad</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">pregunta</ion-title>
+      <ion-title size="large">Pregunta</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="ion-padding">
+    <!-- Muestra la pregunta de seguridad del usuario -->
+    <ion-item>
+      <ion-label position="stacked">Pregunta de seguridad:</ion-label>
+      <ion-text>{{ pregunta }}</ion-text>
+    </ion-item>
+
+    <!-- Campo de entrada para la respuesta del usuario -->
+    <ion-item>
+      <ion-label position="stacked">Respuesta:</ion-label>
+      <ion-input [(ngModel)]="respuesta" placeholder="Escribe tu respuesta aquí"></ion-input>
+    </ion-item>
+
+    <!-- Botón para verificar la respuesta -->
+    <ion-button expand="block" (click)="verificarRespuesta()">Verificar</ion-button>
+  </div>
 </ion-content>

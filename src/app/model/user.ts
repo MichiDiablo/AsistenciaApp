@@ -1,23 +1,28 @@
+import { NavigationExtras, ActivatedRoute, Router } from '@angular/router';
+import { Person } from './person';
 import { EducationalLevel } from './educational-level';
-import { Person } from "./person";
-import { DatabaseService } from '../services/database.service';
-import { inject } from '@angular/core';
 import { convertDateToString } from '../tools/date-functions';
 
 export class User extends Person {
-
   userName = '';
   email = '';
   password = '';
   secretQuestion = '';
   secretAnswer = '';
-  //db = inject(DataBaseService);
   image = '';
+  listaUsuarios: any[] = [];
+  asistencia: any = {};
+  cuenta = '';
+  nombre = '';
+  apellido = '';
+  nivelEducacional = '';
+  fechaNacimiento: any;
 
   constructor() {
     super();
   }
 
+  // Método estático para crear un nuevo usuario
   static getNewUsuario(
     userName: string,
     email: string,
@@ -46,25 +51,70 @@ export class User extends Person {
     return usuario;
   }
 
-  // async findUser(userName: string, password: string): Promise<User | undefined> {
-  //   return await this.db.findUser(userName, password);
-  // }
+  navegarEnviandoUsuario(router: Router, pagina: string) {
+    if (this.userName.trim() !== '' && this.password.trim() !== '') {
+      const navigationExtras: NavigationExtras = {
+        state: {
+          userName: this.userName,
+          listaUsuarios: this.listaUsuarios,
+          asistencia: this.asistencia,
+        },
+      };
+      router.navigate([pagina], navigationExtras);
+    } else {
+      router.navigate(['/ingreso']);
+    }
+  }
 
-  // async findByUserName(userName: string): Promise<User | undefined>  {
-  //   return await this.db.findUserByUserName(userName);
-  // }
+  recibirUsuario(activatedRoute: ActivatedRoute, router: Router) {
+    const nav = router.getCurrentNavigation();
+    if (nav?.extras?.state) {
+      const state = nav.extras.state;
 
-  // async findByEmail(email: string): Promise<User | undefined>  {
-  //   return await this.db.findUserByEmail(email);
-  // }
+      this.listaUsuarios = state['listaUsuarios'] || [];
+      const encontrado = this.buscarUsuarioPorCuenta(state['userName']);
 
-  // async save(): Promise<void> {
-  //   this.db.saveUser(this);
-  // }
+      if (encontrado) {
+        this.cuenta = encontrado.cuenta;
+        this.email = encontrado.email;
+        this.password = encontrado.password;
+        this.secretQuestion = encontrado.secretQuestion;
+        this.secretAnswer = encontrado.secretAnswer;
+        this.nombre = encontrado.nombre;
+        this.apellido = encontrado.apellido;
+        this.nivelEducacional = encontrado.nivelEducacional;
+        this.fechaNacimiento = encontrado.fechaNacimiento;
+        this.asistencia = state['asistencia'] || {};
+      } else {
+        router.navigate(['/ingreso']);
+      }
+    } else {
+      router.navigate(['/ingreso']);
+    }
+  }
 
-  // async delete(userName: string): Promise<void>  {
-  //   this.db.deleteByUserName(userName);
-  // }
+  crearListausuariosValidos() {
+    this.listaUsuarios = [
+      {
+        cuenta: 'usuario1',
+        password: '1234',
+        preguntaSecreta: 'Color favorito',
+        respuestaSecreta: 'Azul',
+        nombre: 'Juan',
+        apellido: 'Pérez',
+        nivelEducacional: 'Secundaria',
+        fechaNacimiento: new Date('2000-01-01'),
+      },
+    ];
+  }
+
+  buscarUsuarioPorCuenta(cuenta: string) {
+    return this.listaUsuarios.find((usuario) => usuario.cuenta === cuenta);
+  }
+
+  buscarUsuarioPorCorreo(email: string) {
+    return this.listaUsuarios.find((usuario) => usuario.email === email);
+  }
 
   override toString(): string {
     return `\n
@@ -81,5 +131,4 @@ export class User extends Person {
         Image: ${this.image !== ''}\n
       `;
   }
-
 }

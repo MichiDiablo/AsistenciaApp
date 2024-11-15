@@ -5,6 +5,7 @@ import { showAlertError, showToast } from 'src/app/tools/message-functions';
 import { User } from '../model/user';
 import { Storage } from '@ionic/storage-angular';
 import { DatabaseService } from './database.service';
+import { NavigationExtras } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class AuthService {
   storageQrCodeKey = 'QR_CODE';
   qrCodeData = new BehaviorSubject<string | null>(null);
 
-  constructor(private router: Router, private db: DatabaseService, private storage: Storage) { }
+  constructor(private router: Router, private db: DatabaseService, private storage: Storage, ) { }
 
   async initializeAuthService() {
     try {
@@ -148,20 +149,6 @@ export class AuthService {
   //     return false;
   //   }
   // }
-  async recuperarContrasena(email: string): Promise<void> {
-    try {
-      const user = await this.db.findUserByEmail(email);
   
-      if (user) {
-        await this.router.navigate(['correcto', { contrasena: user.password }]);
-        // console.log(user.password);
-      } else {
-        showToast('No existe una cuenta registrada con ese correo.');
-        await this.router.navigate(['incorrecto']);
-      }
-    } catch (error) {
-      showAlertError('AuthService.recuperarContrasena', error);
-    }
-  }
 }
 
