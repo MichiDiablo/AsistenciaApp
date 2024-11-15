@@ -54,7 +54,10 @@ export class CorreoPage implements ViewWillEnter {
   }
 
   async findByEmail(email: string): Promise<User | undefined>  {
+    console.log(email);
+    this.recuperarContrasena();
     return await this.dataBaseService.findUserByEmail(email);
+
   }
 
   iniciarSesion() {
@@ -66,6 +69,8 @@ export class CorreoPage implements ViewWillEnter {
     try {
       await this.authService.recuperarContrasena(this.correo);
     } catch (error) {
+      console.log(error);
+      
       showAlertError('CorreoPage.recuperarContrasena', error);
     } finally {
       this.isLoading = false;

@@ -153,12 +153,11 @@ export class AuthService {
       const user = await this.db.findUserByEmail(email);
   
       if (user) {
-        // Redirige a la página de mostrar contraseña y pasa la contraseña como parámetro
-        await this.router.navigate(['/mostrar-contrasena', { contrasena: user.password }]);
+        await this.router.navigate(['correcto', { contrasena: user.password }]);
+        // console.log(user.password);
       } else {
-        // Notifica al usuario que no se encontró el correo
         showToast('No existe una cuenta registrada con ese correo.');
-        await this.router.navigate(['/incorrecto']);
+        await this.router.navigate(['incorrecto']);
       }
     } catch (error) {
       showAlertError('AuthService.recuperarContrasena', error);

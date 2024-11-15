@@ -5,10 +5,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="content">
+  <div class="content ion-text-center">
     <ion-icon name="checkmark-circle-outline" size="large" color="success"></ion-icon>
     <h2>¡Operación realizada correctamente!</h2>
     <p>Tu acción se ha completado exitosamente.</p>
+    
+    <!-- Mostrar la contraseña recuperada -->
+    <p *ngIf="recoveredPassword">Tu contraseña es: <strong>{{ recoveredPassword }}</strong></p>
     
     <ion-button expand="full" color="primary" (click)="irAInicio()">
       Volver al Inicio

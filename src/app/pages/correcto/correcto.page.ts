@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router ,ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+// import { , Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/angular/standalone';
 
@@ -12,10 +13,12 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonIcon } from 
   imports: [IonIcon, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class CorrectoPage implements OnInit {
+  recoveredPassword: string | null = null;
 
-  constructor(private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.recoveredPassword = this.route.snapshot.paramMap.get('password');
   }
   irAInicio() {
     this.router.navigate(['/login']);  
