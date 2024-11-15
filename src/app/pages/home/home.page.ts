@@ -13,6 +13,8 @@ import { Capacitor } from '@capacitor/core';
 import { ScannerService } from 'src/app/services/scanner.service';
 import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { ForumComponent } from 'src/app/components/forum/forum.component';
+import { MisDatosComponent } from 'src/app/components/mis-datos/mis-datos.component';
+import { MapComponent } from 'src/app/components/map/map.component';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +25,7 @@ import { ForumComponent } from 'src/app/components/forum/forum.component';
       CommonModule, FormsModule, TranslateModule, IonContent
     , HeaderComponent, FooterComponent
     , WelcomeComponent, QrWebScannerComponent, DinosaurComponent
-    , ForumComponent
+    , ForumComponent, MisDatosComponent, MapComponent
   ]
 })
 export class HomePage {
@@ -47,7 +49,18 @@ export class HomePage {
 
     if (button === 'scan' && Capacitor.getPlatform() !== 'web')
         this.showDinoComponent(await this.scanner.scan());
+
+    if (button === 'map' && Capacitor.getPlatform() === 'web')
+      this.selectedComponent = 'map';
   }
+
+  async welcomeClick(button: string){
+    if (button === 'scan' && Capacitor.getPlatform() === 'web')
+      this.selectedComponent = 'qrwebscanner';
+    if (button === 'map' && Capacitor.getPlatform() === 'web')
+      this.selectedComponent = 'map';
+  }
+
 
   webQrScanned(qr: string) {
     this.showDinoComponent(qr);

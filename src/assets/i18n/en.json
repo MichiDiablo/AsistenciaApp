@@ -20,12 +20,15 @@
     "Login.Button.DarkMode": "Dark Mode",
 
     "WelcomePage.Title.Wellcome": "Welcome to DUOC Attendance App",
+    "WelcomePage.Button.Map": "Are you running late? Check the map here",
+    "WelcomePage.Button.Scan": "Scan the QR here",
 
     "HomePage.Button.Wellcome": "Home",
     "HomePage.Button.Scan": "Scan",
     "HomePage.Button.MisDatos": "My Data",
     "HomePage.Button.Forum": "Forum",
-    "HomePage.Button.data": "My data",
+    "HomePage.Button.Data": "My data",
+    "HomePage.Button.Class": "My class",
 
     "ThemePage.Label.ColorTheme": "Color Theme:",
     "ThemePage.Color.Light": "Light",

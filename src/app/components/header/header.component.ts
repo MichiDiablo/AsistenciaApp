@@ -4,9 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
-import { logOutOutline, qrCodeOutline } from 'ionicons/icons';
+import { logOutOutline, qrCodeOutline, mapOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
+
+
 
 @Component({
   selector: 'app-header',
@@ -25,7 +27,7 @@ export class HeaderComponent {
   @Output() headerClick = new EventEmitter<string>();
 
   constructor(private navCtrl: NavController, private authService: AuthService) { 
-    addIcons({ logOutOutline, qrCodeOutline });
+    addIcons({ logOutOutline, qrCodeOutline, mapOutline });
   }
 
   sendClickEvent(buttonName: string) {

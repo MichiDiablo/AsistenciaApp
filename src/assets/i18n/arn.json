@@ -20,12 +20,16 @@
     "Login.Button.DarkMode": "Pewma külen müleyin",
 
     "WelcomePage.Title.Wellcome": "¡Tüfachi mülenmi Asistencia DUOC",
+    "WelcomePage.Button.Map": "¿Müley kiñe peney ka? Eymi müpelnge mapan tüfachi",
+    "WelcomePage.Button.Scan": "Müpelnge tüfachi QR",
 
     "HomePage.Button.Wellcome": "Wüña",
     "HomePage.Button.Scan": "Wütran",
     "HomePage.Button.MisDatos": "Ñi Dungu",
     "HomePage.Button.Forum": "Trapu",
-    "HomePage.Button.data": "Ñi rakizuam",
+    "HomePage.Button.Data": "Ñi rakizuam",
+    "HomePage.Button.Class": "Kimeltuwün",
+
 
     "ThemePage.Label.ColorTheme": "Dugün de kolor:",
     "ThemePage.Color.Light": "Külfün",

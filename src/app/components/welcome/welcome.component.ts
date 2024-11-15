@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { IonButton } from '@ionic/angular/standalone';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
   standalone: true,
-  imports: [TranslateModule]
+  imports: [TranslateModule, IonButton]
 })
 export class WelcomeComponent implements OnInit {
+
+  @Output() welcomeClick = new EventEmitter<string>();
 
   user: User = new User();
 
@@ -22,6 +28,11 @@ export class WelcomeComponent implements OnInit {
       }
     });
   }
+
+  sendClickEvent(buttonName: string) {
+    this.welcomeClick.emit(buttonName);
+  }
+  
 
   ngOnInit() {}
 

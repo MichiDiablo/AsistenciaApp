@@ -1,4 +1,4 @@
-import { MisDatosPage } from './pages/mis-datos/mis-datos.page';
+
 import { Routes } from '@angular/router';
 import { loginGuard } from './guards/login.guard';
 import { homeGuard } from './guards/home.guard';
@@ -13,10 +13,6 @@ export const routes: Routes = [
     path: 'ingresar',
     loadComponent: () => import('./pages/ingresar/ingresar.page').then( m => m.LoginPage),
     canActivate: [loginGuard]
-  },
-  {
-    path: 'map',
-    loadComponent: () => import('./pages/map/map.page').then( m => m.MapPage),
   },
   {
     path: 'theme',
@@ -43,11 +39,7 @@ export const routes: Routes = [
     path: 'incorrecto',
     loadComponent: () => import('./pages/incorrecto/incorrecto.page').then( m => m.IncorrectoPage)
   },
-  {
-    path: 'mis-datos',
-    loadComponent: () => import('./pages/mis-datos/mis-datos.page').then( m => m.MisDatosPage),
-    canActivate: [homeGuard]
-  },
+  
 
   
 ];

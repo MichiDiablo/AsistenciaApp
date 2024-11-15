@@ -4,6 +4,8 @@
 
 <ion-content [fullscreen]="true">
 
+  <img class="background-image" src="/assets/images/Fondo.jpg">
+
   <app-qrwebscanner 
     *ngIf="selectedComponent === 'qrwebscanner'" 
     (scanned)="webQrScanned($event)"
@@ -11,7 +13,8 @@
   </app-qrwebscanner >
   
   <app-welcome 
-    *ngIf="selectedComponent === 'welcome'">
+    *ngIf="selectedComponent === 'welcome'"
+    (welcomeClick)="welcomeClick($event)">
   </app-welcome>
 
   <app-dinosaur 
@@ -22,7 +25,15 @@
     *ngIf="selectedComponent === 'forum'">
   </app-forum>
 
-  
+  <app-mis-datos
+    *ngIf="selectedComponent === 'mis-datos'">
+  </app-mis-datos>
+
+  <app-map
+    *ngIf="selectedComponent === 'map'">
+  </app-map>
+
+
 
 </ion-content>
 

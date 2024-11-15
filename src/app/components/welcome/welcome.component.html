@@ -1,4 +1,18 @@
 <div class="ion-text-center">
   <h1> Bienvenido/a </h1>
   <h1> {{ user.firstName}} {{ user.lastName }} </h1>
+
+  <div class="ion-text-center">
+
+    <ion-button (click)="sendClickEvent('map')">
+      {{ "WelcomePage.Button.Map" | translate }}
+    </ion-button>
+  </div>
+
+  <div class="ion-text-center">
+    <ion-button (click)="sendClickEvent('scan')">
+      {{ "WelcomePage.Button.Scan" | translate }}
+    </ion-button>
+  </div>
+
 </div>

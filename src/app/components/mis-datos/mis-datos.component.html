@@ -1,7 +1,8 @@
+
 <ion-content [fullscreen]="true">
   
   <div>
-    <h3> Bienvenido(a) {{ usuario.firstName }} {{ usuario.lastName }} </h3>
+    <h3> Bienvenido(a) a tus datos {{ usuario.firstName }} {{ usuario.lastName }} </h3>
   </div>
 
   <ion-item><ion-input label="Cuenta" labelPlacement="floating"
@@ -19,8 +20,8 @@
   <ion-item><ion-input label="Respuesta secreta" labelPlacement="floating"
         [(ngModel)]="usuario.secretAnswer"></ion-input></ion-item>
 
-        <ion-item><ion-input label="Nombre usuario" labelPlacement="floating"
-          [(ngModel)]="usuario.userName"></ion-input></ion-item>
+  <ion-item><ion-input label="Nombre usuario" labelPlacement="floating"
+        [(ngModel)]="usuario.userName"></ion-input></ion-item>
 
   <ion-item><ion-input label="Nombre" labelPlacement="floating"
         [(ngModel)]="usuario.firstName"></ion-input></ion-item>

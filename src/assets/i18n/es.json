@@ -20,12 +20,15 @@
     "Login.Button.DarkMode": "Oscuro",
 
     "WelcomePage.Title.Wellcome": "¡Bienvenido a Asistencia DUOC",
+    "WelcomePage.Button.Map": "¿Vas atrasado? chequea el mapa aquí",
+    "WelcomePage.Button.Scan": "Escanea el QR aquí",
 
     "HomePage.Button.Wellcome": "Inicio",
     "HomePage.Button.Scan": "Escanear",
     "HomePage.Button.MisDatos": "Mis datos",
     "HomePage.Button.Forum": "Foro",
-    "HomePage.Button.data": "Mis datos",
+    "HomePage.Button.Data": "Mis datos",
+    "HomePage.Button.Class": "Mi clase",
 
     "ThemePage.Label.ColorTheme": "Tema de color:",
     "ThemePage.Color.Light": "Claro",
