@@ -1,3 +1,4 @@
+import { DatabaseService } from './../../services/database.service';
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 import { colorWandOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-correo',
@@ -29,11 +31,13 @@ export class CorreoPage implements ViewWillEnter {
 
   correo: string = '';
   isLoading: boolean = false;
+  
 
   constructor(
       private router: Router
     , private translate: TranslateService
-    , private authService: AuthService) 
+    , private authService: AuthService
+    , private dataBaseService: DatabaseService) 
   { 
     this.correo = 'atorres@duocuc.cl';
     // Los iconos deben ser agregados a uno (ver en https://ionic.io/ionicons)
@@ -48,19 +52,8 @@ export class CorreoPage implements ViewWillEnter {
     this.router.navigate(['/theme']);
   }
 
-  enter() {
-    if (this.correo.trim() === 'pepetapia@gmail.com') {
-      console.log('Por favor, ingrese su cuenta.');
-      return;
-    }
-
-    this.isLoading = true;
-    console.log('Cuenta ingresada:', this.correo);
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2000); 
-
-    
+  async findByEmail(email: string): Promise<User | undefined>  {
+    return await this.dataBaseService.findUserByEmail(email);
   }
 
   iniciarSesion() {

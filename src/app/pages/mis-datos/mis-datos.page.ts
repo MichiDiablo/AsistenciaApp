@@ -21,54 +21,6 @@ import { showToast } from 'src/app/tools/message-functions';
 })
 export class MisDatosPage implements OnInit {
 
-  usuario: User = new User();
-  usuarios: User[] = [];
-  publicaciones: Post[] = [];
-  listaNivelesEducacionales: EducationalLevel[] = EducationalLevel.getLevels();
-
-  constructor(
-    private bd: DatabaseService,
-    private auth: AuthService,
-    private api: APIClientService) 
-  { 
-   
-    this.bd.userList.subscribe((usuarios) => {
-      if (usuarios) {
-        this.usuarios = usuarios;
-      }
-    });
-    this.auth.readAuthUser().then((usuario) => {
-      if (usuario) {
-        this.usuario = usuario;
-        console.log(this.usuario);
-      }
-    });
-    
-  }
-
-  ngOnInit() {
-
-  }
-
-  guardarUsuario() {
-    if (this.usuario.firstName.trim() === '') {
-      showToast('El usuario debe tener un nombre');
-    } else {
-      console.log(this.usuario);
-      this.bd.saveUser(this.usuario);
-      this.auth.saveAuthUser(this.usuario);
-      showToast('El usuario fue guardado correctamente');
-    }
-  }
-
-  public actualizarNivelEducacional(event: any) {
-    debugger
-    this.usuario.educationalLevel 
-      = EducationalLevel.findLevel(event.detail.value)!;
-  }
-
-  onFechaNacimientoChange(event: any) {
-    this.usuario.dateOfBirth = new Date(event.detail.value); // Convertir de ISO a Date
-  }
-
+  ngOnInit() {}
+  
 }
