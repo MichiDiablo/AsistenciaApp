@@ -1,13 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>correcto</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content class="ion-padding">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">correcto</ion-title>
+      <ion-title>Operación Exitosa</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="content">
+    <ion-icon name="checkmark-circle-outline" size="large" color="success"></ion-icon>
+    <h2>¡Operación realizada correctamente!</h2>
+    <p>Tu acción se ha completado exitosamente.</p>
+    
+    <ion-button expand="full" color="primary" (click)="irAInicio()">
+      Volver al Inicio
+    </ion-button>
+  </div>
 </ion-content>

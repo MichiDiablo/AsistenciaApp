@@ -11,6 +11,7 @@ import { colorWandOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/model/user';
+import { showAlertError } from 'src/app/tools/message-functions';
 
 @Component({
   selector: 'app-correo',
@@ -58,6 +59,17 @@ export class CorreoPage implements ViewWillEnter {
 
   iniciarSesion() {
     this.router.navigate(['/ingresar']);
+  }
+
+  async recuperarContrasena() {
+    this.isLoading = true;
+    try {
+      await this.authService.recuperarContrasena(this.correo);
+    } catch (error) {
+      showAlertError('CorreoPage.recuperarContrasena', error);
+    } finally {
+      this.isLoading = false;
+    }
   }
 
 }
