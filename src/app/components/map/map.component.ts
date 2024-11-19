@@ -9,6 +9,7 @@ import { GeoService } from 'src/app/services/geo.service';
 import * as L from 'leaflet'; // Importamos Leaflet
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-map',
@@ -65,6 +66,8 @@ export class MapComponent implements OnInit {
     });
   }
 
+  
+  
   goToDUOC() {
     this.goToPosition(-33.44703, -70.65762, 50, 'Instituto DUOC Padre Alonso de Ovalle');
   }
