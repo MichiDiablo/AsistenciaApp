@@ -19,10 +19,11 @@ export class CorrectoPage implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.recoveredPassword = this.route.snapshot.paramMap.get('password');
+    this.recoveredPassword = this.route.snapshot.paramMap.get('contrasena'); 
+    console.log('Contraseña recuperada:', this.recoveredPassword);
   }
   irAInicio() {
-    this.router.navigate(['/login']);  
+    this.router.navigate(['ingresar']);
   }
 
  

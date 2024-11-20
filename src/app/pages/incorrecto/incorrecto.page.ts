@@ -20,6 +20,6 @@ export class IncorrectoPage {
 
   volverIntentar() {
     // Usa this.router en lugar de this.Router
-    this.router.navigate(['/pages/pregunta']); 
+    this.router.navigate(['correo']);
   }
 }

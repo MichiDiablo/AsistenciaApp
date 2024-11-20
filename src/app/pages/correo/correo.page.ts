@@ -79,12 +79,12 @@ export class CorreoPage implements ViewWillEnter {
   // }
   async buscarEmail(email: string): Promise<void> {
     try {
-      const user = await this.db.findUserByEmail(email); // Usa '=' en lugar de '==='
-      console.log(user);
+      const user = await this.db.findUserByEmail(email); 
+      console.log('Usuario encontrado:', user);
   
       if (user) {
         const navigationExtras: NavigationExtras = {
-          state: { usuario: user }
+          state: { user: user } 
         };
         await this.router.navigate(['pregunta'], navigationExtras);
       } else {

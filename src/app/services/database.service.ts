@@ -250,13 +250,15 @@ export class DatabaseService {
     try {
       const q = 'SELECT * FROM USER WHERE email=?;';
       const rows = (await this.db.query(q, [email])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      if (!rows || rows.length === 0) {
+        return undefined; // Si no se encuentra el usuario, regresa undefined
+      }
+      return this.rowToUser(rows[0]); // Asegúrate de que rowToUser maneja el mapeo correctamente
     } catch (error) {
       showAlertError('DataBaseService.findUserByEmail', error);
       return undefined;
     }
   }
-
   private rowToUser(row: any): User {
     try {
       const user = new User();

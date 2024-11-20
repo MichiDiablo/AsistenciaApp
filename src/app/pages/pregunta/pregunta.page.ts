@@ -19,9 +19,9 @@ export class PreguntaPage {
 
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
-    if (navigation && navigation.extras && navigation.extras.state) {
-      this.user = navigation.extras.state['user'];
-      this.pregunta = navigation.extras.state['pregunta']
+    if (navigation?.extras?.state) {
+      this.user = navigation.extras.state['user'] || new User(); 
+      this.pregunta = this.user.secretQuestion || 'Pregunta no disponible'; 
       console.log('Usuario cargado:', this.user);
       console.log('Pregunta de seguridad:', this.pregunta);
     } else {
@@ -31,13 +31,13 @@ export class PreguntaPage {
   
 
   verificarRespuesta() {
-  if (this.respuesta.trim().toLowerCase() === this.user.secretAnswer.trim().toLowerCase()) {
-    console.log('Respuesta correcta');
-    this.router.navigate(['/pages/correcto']);
-  } else {
-    console.log('Respuesta incorrecta');
-    this.router.navigate(['/pages/incorrecto']);
+    if (this.respuesta.trim().toLowerCase() === this.user.secretAnswer.trim().toLowerCase()) {
+      console.log('Respuesta correcta');
+      this.router.navigate(['correcto', this.user.password]); // Pasa la contraseña como parámetro
+    } else {
+      console.log('Respuesta incorrecta');
+      this.router.navigate(['incorrecto']);
+    }
   }
-}
 
 }
