@@ -186,7 +186,7 @@ export class DatabaseService {
       const q = 'SELECT * FROM USER;';
       const rows = (await this.db.query(q)).values;
       let users: User[] = [];
-      if (rows) {
+      if (rows?.length) {
         users = rows.map((row: any) => this.rowToUser(row));
       }
       this.userList.next(users);

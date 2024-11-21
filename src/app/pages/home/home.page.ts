@@ -57,7 +57,7 @@ export class HomePage {
   async welcomeClick(button: string){
     if (button === 'scan' && Capacitor.getPlatform() === 'web')
       this.selectedComponent = 'qrwebscanner';
-    if (button === 'map' && Capacitor.getPlatform() === 'web')
+    if (button === 'map' && Capacitor.getPlatform() !== 'web')
       this.selectedComponent = 'map';
   }
 

@@ -39,6 +39,7 @@ export class AuthService {
 
   async readAuthUser(): Promise<User | null> {
     try {
+      debugger
       const user = (await this.storage.get(this.storageAuthUserKey)) as User | null;
       this.authUser.next(user ?? null);
       return user;

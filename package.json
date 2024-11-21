@@ -41,6 +41,7 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "ionicons": "^7.2.1",
     "jeep-sqlite": "^2.8.0",
+    "json-server": "^0.17.4",
     "jsqr": "^1.4.0",
     "leaflet": "^1.9.4",
     "native-run": "^2.0.1",
