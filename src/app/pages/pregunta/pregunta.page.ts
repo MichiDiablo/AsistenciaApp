@@ -1,18 +1,23 @@
 import { User } from './../../model/user';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonButton, IonInput, IonText } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonButton, IonInput, IonText, IonIcon, IonCardContent, IonCardHeader, IonCardTitle, IonCard } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
+import { LanguageComponent } from "../../components/language/language.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pregunta',
   templateUrl: './pregunta.page.html',
   styleUrls: ['./pregunta.page.scss'],
   standalone: true,
-  imports: [IonText, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput, CommonModule, FormsModule]
+  imports: [IonContent, IonCard, IonCardTitle, IonCardHeader, IonCardContent, IonIcon, IonText, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput, CommonModule, FormsModule, LanguageComponent, TranslateModule]
 })
 export class PreguntaPage {
+
+  @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
+  
   user: User = new User();
   pregunta: string = '';
   respuesta: string = '';
@@ -29,6 +34,9 @@ export class PreguntaPage {
     }
   }
   
+  navigateTheme() {
+    this.router.navigate(['/theme']);
+  }
 
   verificarRespuesta() {
     if (this.respuesta.trim().toLowerCase() === this.user.secretAnswer.trim().toLowerCase()) {

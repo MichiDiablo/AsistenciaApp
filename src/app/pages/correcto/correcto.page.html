@@ -1,21 +1,65 @@
-<ion-content class="ion-padding">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Operación Exitosa</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header>
+  <ion-toolbar class="transparent-bg">
+    <div class="show-in-landscape">
+      <h1 style="text-align: center;"> {{ 'AppName' | translate }} </h1>
+    </div>
+   </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <img class="background-image" src="/assets/images/Duoc.jpg">
+  
+  <h1 style="text-align: center;" class="show-in-portrait margin-top-6"> {{ 'AppName' | translate }} </h1>
+  
+  <ion-card class="login-container transparent-input">
+    
+    <ion-card-header class="show-in-portrait" style="text-align: center;">
+      <ion-card-title color="light">
+        <h4>
+          <b>
+            {{ 'Login.Title.Login' | translate }}
+          </b>
+        </h4>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="transparent-input text-center">
+      <ion-item class="margin-bottom-6 float-landscape">
+        <ion-text class="content ion-text-center">
+          <h2>¡Operación realizada correctamente!</h2>
+          <p>Tu acción se ha completado exitosamente.</p>
+          <p *ngIf="recoveredPassword">Tu contraseña es: <strong>{{ recoveredPassword }}</strong></p>
+        </ion-text>
+      </ion-item>
+
+      <div class="ion-text-center margin-top-6" style="clear: both;">
+        <ion-button class="enter-button normal-text" shape="round" (click)="irAInicio()">
+          Volver al Inicio
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card> 
+</ion-content>
+
+
+<!-- <ion-content class="ion-padding">
 
   <div class="content ion-text-center">
     <ion-icon name="checkmark-circle-outline" size="large" color="success"></ion-icon>
     <h2>¡Operación realizada correctamente!</h2>
     <p>Tu acción se ha completado exitosamente.</p>
     
-    <!-- Mostrar la contraseña recuperada -->
+     Mostrar la contraseña recuperada
     <p *ngIf="recoveredPassword">Tu contraseña es: <strong>{{ recoveredPassword }}</strong></p>
 
     
-    <ion-button expand="full" color="primary" (click)="irAInicio()">
-      Volver al Inicio
-    </ion-button>
+    <div class="ion-text-center margin-top-6" style="clear: both;">
+      <ion-button class="enter-button normal-text" shape="round" (click)="irAInicio()">
+        Volver al Inicio
+      </ion-button>
+    </div>
   </div>
-</ion-content>
+</ion-content> -->

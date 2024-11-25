@@ -1,32 +1,76 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Pregunta de Seguridad</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <ion-toolbar class="transparent-bg">
+    <div slot="start" class="ion-margin">
+      <app-language #selectLanguage></app-language>
+    </div>
+    <div class="show-in-landscape">
+      <h1 style="text-align: center;"> {{ 'AppName' | translate }} </h1>
+    </div>
+    <div slot="end" class="ion-margin">
+      <ion-button shape="round" size="small" (click)="navigateTheme()">
+        Tema
+        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+      </ion-button>
+    </div>
+   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Pregunta</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div class="ion-padding">
-    <!-- Muestra la pregunta de seguridad del usuario -->
-    <ion-item>
-      <ion-label position="stacked">Pregunta de seguridad:</ion-label>
-      <ion-text>
-        {{ pregunta }}
-      </ion-text>
-    </ion-item>
+  <img class="background-image" src="/assets/images/Duoc.jpg">
+  
+  <h1 style="text-align: center;" class="show-in-portrait margin-top-6"> {{ 'AppName' | translate }} </h1>
 
-    <!-- Campo de entrada para la respuesta del usuario -->
-    <ion-item>
-      <ion-label position="stacked">Respuesta:</ion-label>
-      <ion-input [(ngModel)]="respuesta" placeholder="Escribe tu respuesta aquí"></ion-input>
-    </ion-item>
+  <ion-card class="login-container transparent-input">
+    <ion-card-header class="show-in-portrait" style="text-align: center;">
+      <ion-card-title color="light">
+        <h4>
+          <b>
+            {{ 'Login.Title.Login' | translate }}
+          </b>
+        </h4>
+      </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="transparent-input text-center">
+  
+      <ion-item class="margin-bottom-6 float-landscape">
+        <ion-label position="stacked">Pregunta de seguridad:</ion-label>
+        <ion-text>
+          {{ pregunta }}
+        </ion-text>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="stacked">Respuesta:</ion-label>
+        <ion-input [(ngModel)]="respuesta" placeholder="Escribe tu respuesta aquí"></ion-input>
+      </ion-item>
 
-    <!-- Botón para verificar la respuesta -->
-    <ion-button expand="block" (click)="verificarRespuesta()">Verificar</ion-button>
-  </div>
+      <div class="ion-text-center margin-top-6" style="clear: both;">
+        <ion-button class="enter-button normal-text" shape="round" (click)="verificarRespuesta()">Verificar</ion-button>
+      </div>
+  
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>
+
+
+<!-- <div class="ion-padding">
+  
+  <ion-item>
+    <ion-label position="stacked">Pregunta de seguridad:</ion-label>
+    <ion-text>
+      {{ pregunta }}
+    </ion-text>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="stacked">Respuesta:</ion-label>
+    <ion-input [(ngModel)]="respuesta" placeholder="Escribe tu respuesta aquí"></ion-input>
+  </ion-item>
+
+  
+  <ion-button expand="block" (click)="verificarRespuesta()">Verificar</ion-button>
+</div> -->
