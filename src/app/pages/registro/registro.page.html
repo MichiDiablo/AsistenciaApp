@@ -1,0 +1,109 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Registro de Usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="registerForm" (ngSubmit)="registrarUsuario()" class="ion-padding">
+
+    <ion-item>
+      <ion-input
+        formControlName="userName"
+        label="Nombre de Usuario"
+        labelPlacement="floating"
+        type="text">
+      </ion-input>
+    </ion-item>
+    <ion-text *ngIf="registerForm.get('userName').touched && registerForm.get('userName').invalid" color="danger">
+      El nombre de usuario es obligatorio y debe tener al menos 4 caracteres.
+    </ion-text>
+
+    <ion-item>
+      <ion-input
+        formControlName="email"
+        label="Correo Electrónico"
+        labelPlacement="floating"
+        type="email">
+      </ion-input>
+    </ion-item>
+    <ion-text *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid" color="danger">
+      Ingresa un correo válido.
+    </ion-text>
+
+    <ion-item>
+      <ion-input
+        formControlName="password"
+        label="Contraseña"
+        labelPlacement="floating"
+        type="password">
+      </ion-input>
+    </ion-item>
+    <ion-text *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid" color="danger">
+      La contraseña debe tener al menos 6 caracteres.
+    </ion-text>
+
+    <ion-item>
+      <ion-input
+        formControlName="secretQuestion"
+        label="Pregunta Secreta"
+        labelPlacement="floating">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        formControlName="secretAnswer"
+        label="Respuesta Secreta"
+        labelPlacement="floating">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        formControlName="firstName"
+        label="Nombre"
+        labelPlacement="floating">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        formControlName="lastName"
+        label="Apellido"
+        labelPlacement="floating">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+        formControlName="educationalLevel"
+        label="Nivel Educacional"
+        labelPlacement="floating">
+        <ion-select-option *ngFor="let nivel of listaNivelesEducacionales" [value]="nivel.id">
+          {{ nivel.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-datetime
+        formControlName="dateOfBirth"
+        label="Fecha de Nacimiento"
+        labelPlacement="floating">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        formControlName="address"
+        label="Dirección"
+        labelPlacement="floating">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">
+      Registrar Usuario
+    </ion-button>
+  </form>
+</ion-content>

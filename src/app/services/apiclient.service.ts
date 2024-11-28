@@ -19,7 +19,8 @@ export class APIClientService {
     })
   };
 
-  apiUrl = 'http://192.168.191.72:3000';
+  // apiUrl = 'http://192.168.191.72:3000';
+  apiUrl = 'http://localhost:3000';
   //apiUrl = 'http://192.168.100.227:3000';
   postList: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>([]);
 

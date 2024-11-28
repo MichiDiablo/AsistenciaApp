@@ -67,5 +67,19 @@
     "ThemePage.Form.DescriptionLabel": "Description",
     "ThemePage.Form.DescriptionPlaceholder": "Write a description here...",
     "ThemePage.Form.ToggleLabel": "Enable notifications",
-    "ThemePage.Form.CheckboxLabel": "I accept the terms"
+    "ThemePage.Form.CheckboxLabel": "I accept the terms",
+
+
+    
+    "QRPage.Sede": "Campus:",
+    "QRPage.IdAsignatura": "Course ID:",
+    "QRPage.Seccion": "Section:",
+    "QRPage.NombreAsignatura": "Course Name:",
+    "QRPage.Profesor": "Teacher:",
+    "QRPage.Dia": "Day:",
+    "QRPage.BloqueInicio": "Start Block:",
+    "QRPage.BloqueTermino": "End Block:",
+    "QRPage.HoraInicio": "Start Time:",
+    "QRPage.HoraFin": "End Time:",
+    "QRPage.ScanPrompt": "You must scan the QR"
 }

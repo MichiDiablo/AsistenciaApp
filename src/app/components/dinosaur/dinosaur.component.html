@@ -1,53 +1,54 @@
 <ion-content>
 
   <div class="background-image" *ngIf="qr"></div>
+  <img class="background-image" src="/assets/images/Fondo.jpg">
 
   <ion-grid fixed *ngIf="qr" class="qr-content">
     <ion-row>
-      <ion-col size="5">Sede: </ion-col>
+      <ion-col size="5">{{ 'QRPage.Sede' | translate }}</ion-col>
       <ion-col size="7">{{ qr.sede }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Id Asignatura: </ion-col>
+      <ion-col size="5">{{ 'QRPage.IdAsignatura' | translate }}</ion-col>
       <ion-col size="7">{{ qr.idAsignatura }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Seccion: </ion-col>
+      <ion-col size="5">{{ 'QRPage.Seccion' | translate }}</ion-col>
       <ion-col size="7">{{ qr.seccion }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Nombre Asignatura: </ion-col>
+      <ion-col size="5">{{ 'qr.nombreAsignatura' | translate }}</ion-col>
       <ion-col size="7">{{ qr.nombreAsignatura }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Profesor: </ion-col>
+      <ion-col size="5">{{ 'QRPage.Profesor' | translate }}</ion-col>
       <ion-col size="7">{{ qr.nombreProfesor }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Dia: </ion-col>
+      <ion-col size="5">{{ 'QRPage.Dia' | translate }}</ion-col>
       <ion-col size="7">{{ qr.dia }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Bloque Inicio: </ion-col>
+      <ion-col size="5">{{ 'QRPage.BloqueInicio' | translate }}</ion-col>
       <ion-col size="7">{{ qr.bloqueInicio }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Bloque Termino: </ion-col>
+      <ion-col size="5">{{ 'QRPage.BloqueTermino' | translate }}</ion-col>
       <ion-col size="7">{{ qr.bloqueTermino }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Hora de inicio: </ion-col>
+      <ion-col size="5">{{ 'QRPage.HoraInicio' | translate }}</ion-col>
       <ion-col size="7">{{ qr.horaInicio }}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5">Hora de termino: </ion-col>
+      <ion-col size="5">{{ 'QRPage.HoraFin' | translate }}</ion-col>
       <ion-col size="7">{{ qr.horaFin }}</ion-col>
     </ion-row>
   </ion-grid>
 
   <div *ngIf="!qr" class="center-frame">
     <div class="ion-text-center">
-      <h1>Debes escanear el QR</h1>
+      <h1>{{ 'QRPage.scanPrompt' | translate }}</h1>
     </div>
   </div>
 
