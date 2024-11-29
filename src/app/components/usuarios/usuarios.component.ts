@@ -10,6 +10,7 @@ import {
   IonCardTitle,
   IonCardSubtitle,
   IonCardContent,
+  IonIcon, // Asegúrate de importar IonIcon
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
+    IonIcon, // Asegúrate de agregar IonIcon aquí
   ],
 })
 export class UsuariosComponent {
