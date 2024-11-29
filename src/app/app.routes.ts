@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: 'ingresar',
-    loadComponent: () => import('./pages/ingresar/ingresar.page').then(m => m.LoginPage),
+    loadComponent: () => import('./pages/ingresar/ingresar.page').then(m => m.IngresarPage),
     canActivate: [loginGuard]
   },
   {
@@ -42,6 +42,5 @@ export const routes: Routes = [
     path: 'registro',
     loadComponent: () => import('./pages/registro/registro.page').then( m => m.RegistroPage)
   },
-
 
 ];

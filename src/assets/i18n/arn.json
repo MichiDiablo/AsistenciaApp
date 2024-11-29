@@ -68,5 +68,17 @@
     "ThemePage.Form.DescriptionLabel": "Püllün",
     "ThemePage.Form.DescriptionPlaceholder": "Eymi mülen ta püllün...",
     "ThemePage.Form.ToggleLabel": "Külfünon notificaciones",
-    "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi"
+    "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi",
+
+    "QRPage.Sede": "Ruka:",
+    "QRPage.IdAsignatura": "ID Kimeltuwün:",
+    "QRPage.Seccion": "Witral:",
+    "QRPage.NombreAsignatura": "Kimeltuwün ñi wece:",
+    "QRPage.Profesor": "Kimelfe:",
+    "QRPage.Dia": "Antü:",
+    "QRPage.BloqueInicio": "Püle küla:",
+    "QRPage.BloqueTermino": "Rume küla:",
+    "QRPage.HoraInicio": "Püle hora:",
+    "QRPage.HoraFin": "Rume hora:",
+    "QRPage.ScanPrompt": "Ütüfülem müten QR"
 }
