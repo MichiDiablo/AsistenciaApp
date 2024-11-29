@@ -4,9 +4,10 @@
       <ion-title>Registro de Usuario</ion-title>
     </ion-toolbar>
   </ion-header>
-
+  <!-- <img class="background-image" src="/assets/images/Duoc.jpg"> -->
   <form [formGroup]="registerForm" (ngSubmit)="registrarUsuario()" class="ion-padding">
 
+    <!-- Nombre de Usuario -->
     <ion-item>
       <ion-input
         formControlName="userName"
@@ -15,10 +16,11 @@
         type="text">
       </ion-input>
     </ion-item>
-    <ion-text *ngIf="registerForm.get('userName').touched && registerForm.get('userName').invalid" color="danger">
+    <ion-text *ngIf="isControlInvalid('userName')" color="danger">
       El nombre de usuario es obligatorio y debe tener al menos 4 caracteres.
     </ion-text>
 
+    <!-- Correo Electrónico -->
     <ion-item>
       <ion-input
         formControlName="email"
@@ -27,10 +29,11 @@
         type="email">
       </ion-input>
     </ion-item>
-    <ion-text *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid" color="danger">
+    <ion-text *ngIf="isControlInvalid('email')" color="danger">
       Ingresa un correo válido.
     </ion-text>
 
+    <!-- Contraseña -->
     <ion-item>
       <ion-input
         formControlName="password"
@@ -39,10 +42,11 @@
         type="password">
       </ion-input>
     </ion-item>
-    <ion-text *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid" color="danger">
+    <ion-text *ngIf="isControlInvalid('password')" color="danger">
       La contraseña debe tener al menos 6 caracteres.
     </ion-text>
 
+    <!-- Pregunta Secreta -->
     <ion-item>
       <ion-input
         formControlName="secretQuestion"
@@ -51,6 +55,7 @@
       </ion-input>
     </ion-item>
 
+    <!-- Respuesta Secreta -->
     <ion-item>
       <ion-input
         formControlName="secretAnswer"
@@ -59,6 +64,7 @@
       </ion-input>
     </ion-item>
 
+    <!-- Nombre -->
     <ion-item>
       <ion-input
         formControlName="firstName"
@@ -67,6 +73,7 @@
       </ion-input>
     </ion-item>
 
+    <!-- Apellido -->
     <ion-item>
       <ion-input
         formControlName="lastName"
@@ -75,6 +82,7 @@
       </ion-input>
     </ion-item>
 
+    <!-- Nivel Educacional -->
     <ion-item>
       <ion-select
         formControlName="educationalLevel"
@@ -86,6 +94,8 @@
       </ion-select>
     </ion-item>
 
+    <!-- Fecha de Nacimiento -->
+    <div class="section-title">Fecha de Nacimiento</div>
     <ion-item>
       <ion-datetime
         formControlName="dateOfBirth"
@@ -94,6 +104,8 @@
       </ion-datetime>
     </ion-item>
 
+    <!-- Dirección -->
+    <div class="section-title">Dirección</div>
     <ion-item>
       <ion-input
         formControlName="address"
@@ -102,7 +114,8 @@
       </ion-input>
     </ion-item>
 
-    <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">
+    <!-- Botón de Registro -->
+    <ion-button expand="block" type="submit" [disabled]="registerForm.invalid" class="submit-button">
       Registrar Usuario
     </ion-button>
   </form>

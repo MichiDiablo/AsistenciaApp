@@ -4,7 +4,19 @@ import { DatabaseService } from 'src/app/services/database.service';
 import { User } from 'src/app/model/user';
 import { EducationalLevel } from 'src/app/model/educational-level';
 import { showAlertError, showSysAlert } from 'src/app/tools/message-functions'; 
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import {
+  IonContent,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonItem,
+  IonInput,
+  IonText,
+  IonSelect,
+  IonSelectOption,
+  IonDatetime,
+  IonButton
+} from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -13,7 +25,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ReactiveFormsModule]
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IonContent,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonItem,
+    IonInput,
+    IonText,
+    IonSelect,
+    IonSelectOption,
+    IonDatetime,
+    IonButton
+  ]
 })
 export class RegistroPage implements OnInit {
   registerForm!: FormGroup; 
@@ -29,7 +56,6 @@ export class RegistroPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    
     this.registerForm = this.fb.group({
       userName: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
@@ -45,7 +71,6 @@ export class RegistroPage implements OnInit {
   }
 
   async registrarUsuario() {
-    // Verifica que el formulario sea válido
     if (this.registerForm.invalid) {
       await showAlertError('Formulario Inválido', 'Por favor completa todos los campos correctamente.');
       return;
@@ -53,7 +78,6 @@ export class RegistroPage implements OnInit {
 
     const userData = this.registerForm.value;
 
-    // Crea un nuevo usuario con los datos del formulario
     const newUser = User.getNewUsuario(
       userData.userName,
       userData.email,
@@ -62,26 +86,29 @@ export class RegistroPage implements OnInit {
       userData.secretAnswer,
       userData.firstName,
       userData.lastName,
-      EducationalLevel.findLevel(userData.educationalLevel)!, // Obtiene el nivel educativo
-      new Date(userData.dateOfBirth), // Convierte la fecha
+      EducationalLevel.findLevel(userData.educationalLevel)!,
+      new Date(userData.dateOfBirth),
       userData.address,
       'default-image.jpg'
     );
 
     try {
-      // Verifica si el usuario ya existe por correo
       const existingUser = await this.databaseService.findUserByEmail(userData.email);
       if (existingUser) {
         await showAlertError('Registro Fallido', 'Ya existe un usuario con este correo.');
         return;
       }
 
-      // Guarda el nuevo usuario en la base de datos
       await this.databaseService.saveUser(newUser);
       await showSysAlert('Registro Exitoso', 'El usuario ha sido registrado correctamente.');
-      this.registerForm.reset(); // Limpia el formulario
+      this.registerForm.reset();
     } catch (error) {
       await showAlertError('Error', 'Ocurrió un error al registrar el usuario. Por favor intenta nuevamente.');
     }
+  }
+
+  isControlInvalid(controlName: string): boolean {
+    const control = this.registerForm.get(controlName);
+    return control ? control.touched && control.invalid : false;
   }
 }
