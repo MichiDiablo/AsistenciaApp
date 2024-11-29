@@ -47,7 +47,7 @@ export class DatePickerComponent implements ControlValueAccessor {
 
   // Método que se llama cuando el usuario cambia la fecha en el ion-datetime
   onDateChange(event: any) {
-    debugger
+    // debugger
     this.showCalendar = false;
     this.selectedDate = new Date(event.detail.value);  // Convertir de ISO a Date
     this.selectedDateText = this.formatDate(this.selectedDate);  // Actualizar la caja de texto

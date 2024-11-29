@@ -64,7 +64,7 @@ export class MisDatosComponent implements OnInit {
   }
 
   public actualizarNivelEducacional(event: any) {
-    debugger
+    // debugger
     this.usuario.educationalLevel 
       = EducationalLevel.findLevel(event.detail.value)!;
   }

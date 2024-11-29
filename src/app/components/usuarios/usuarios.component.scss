@@ -1,0 +1,57 @@
+ion-content {
+  --background: #f5f5f5;
+
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+
+  .title-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  .user-list {
+    padding: 0 10px;
+  }
+
+  .user-card {
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .user-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4caf50;
+  }
+
+  .user-email {
+    font-size: 0.875rem;
+    color: #555;
+  }
+
+  .logout-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  ion-button {
+    --border-radius: 4px;
+  }
+
+  ion-icon {
+    margin-left: 5px;
+    font-size: 1.2rem;
+  }
+}
