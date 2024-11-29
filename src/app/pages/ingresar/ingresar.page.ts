@@ -23,7 +23,7 @@ import { AuthService } from 'src/app/services/auth.service';
     , LanguageComponent // CGV-Lista de idiomas
   ]
 })
-export class LoginPage implements ViewWillEnter {
+export class IngresarPage implements ViewWillEnter {
 
   @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
 
