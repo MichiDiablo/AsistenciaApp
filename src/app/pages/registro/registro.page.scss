@@ -1,0 +1,39 @@
+ion-content {
+
+  form {
+    .ion-padding {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ion-item {
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #444;
+      margin: 20px 0 10px 0;
+    }
+
+    ion-text {
+      font-size: 0.875rem;
+      margin-top: -8px;
+      margin-bottom: 10px;
+    }
+
+    .submit-button {
+      margin-top: 20px;
+    }
+  }
+}
+
+.section-title {
+  font-size: 1rem; /* Tamaño de la fuente */
+  font-weight: bold; /* Texto en negrita */
+  color: white; /* Texto blanco */
+  margin: 20px 0 10px 0; /* Espaciado arriba y abajo */
+  text-align: left; /* Alineación a la izquierda */
+}
+
