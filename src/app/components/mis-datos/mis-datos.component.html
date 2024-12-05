@@ -40,17 +40,14 @@
     </ion-select>
   </ion-item>
 
+  <ion-item><ion-input label="Direccion" labelPlacement="floating"
+      [(ngModel)]="usuario.address"></ion-input></ion-item>
+
   <ion-item>
-    <app-date-picker 
-        [(ngModel)]="usuario.dateOfBirth"
-        (ionChange)="onFechaNacimientoChange($event)"
-        label="Nacimiento"
-        labelPlacement="floating">
-    </app-date-picker>
+    <app-date-picker></app-date-picker>
   </ion-item>
 
-  <ion-item><ion-input label="Direccion" labelPlacement="floating"
-        [(ngModel)]="usuario.address"></ion-input></ion-item>
+  
 
   <ion-button (click)="guardarUsuario()">
     Guardar

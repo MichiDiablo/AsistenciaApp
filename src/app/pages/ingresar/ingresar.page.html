@@ -37,15 +37,17 @@
       
       <ion-item class="margin-bottom-6 float-left-landscape">
         <ion-input 
+          id="userName"
           label="{{ 'Login.Label.Email' | translate }}" 
           labelPlacement="floating"
-          [(ngModel)]="correo" 
+          [(ngModel)]="userName" 
           placeholder="{{ 'Login.Placeholder.Email' | translate }}">
         </ion-input>
       </ion-item>
 
       <ion-item class="margin-bottom-6 float-right-landscape">
         <ion-input 
+          id="password"
           label="{{ 'Login.Label.Password' | translate }}"
           labelPlacement="floating"
           [(ngModel)]="password" 

@@ -11,7 +11,7 @@ import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-ingresar',
   templateUrl: './ingresar.page.html',
   styleUrls: ['./ingresar.page.scss'],
   standalone: true,
@@ -27,7 +27,7 @@ export class IngresarPage implements ViewWillEnter {
 
   @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
 
-  correo: string;
+  userName: string;
   password: string;
 
   constructor(
@@ -35,7 +35,7 @@ export class IngresarPage implements ViewWillEnter {
     , private translate: TranslateService
     , private authService: AuthService) 
   { 
-    this.correo = 'atorres';
+    this.userName = 'atorres';
     this.password = '1234';
     addIcons({ colorWandOutline }); 
   }
@@ -49,7 +49,7 @@ export class IngresarPage implements ViewWillEnter {
   }
 
   login() {
-    this.authService.login(this.correo, this.password);
+    this.authService.login(this.userName, this.password);
   }
 
   registerNewUser() {

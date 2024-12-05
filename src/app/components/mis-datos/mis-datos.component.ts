@@ -9,6 +9,7 @@ import { Post } from 'src/app/model/post';
 import { APIClientService } from 'src/app/services/apiclient.service';
 import { EducationalLevel } from 'src/app/model/educational-level';
 import { showToast } from 'src/app/tools/message-functions';
+import { DatePickerComponent } from '../date-picker/date-picker.component';
 
 @Component({
   selector: 'app-mis-datos',
@@ -16,7 +17,7 @@ import { showToast } from 'src/app/tools/message-functions';
   styleUrls: ['./mis-datos.component.scss'],
   standalone: true,
   imports: [IonButton, IonInput, IonContent, IonHeader, IonTitle, IonToolbar
-    , CommonModule, FormsModule, IonItem, IonSelect, IonSelectOption]
+    , CommonModule, FormsModule, IonItem, IonSelect, IonSelectOption, DatePickerComponent]
 })
 export class MisDatosComponent implements OnInit {
 
