@@ -9,7 +9,7 @@
         <ion-icon name="map-outline" color="light"></ion-icon>
       </ion-button>
 
-      <ion-button *ngIf="user?.role==0" (click)="sendClickEvent('scan')" size="small" fill="clear">
+      <ion-button *ngIf="user?.role===0" (click)="sendClickEvent('scan')" size="small" fill="clear">
         <ion-icon name="qr-code-outline" color="light"></ion-icon>
       </ion-button>
 
