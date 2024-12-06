@@ -8,6 +8,7 @@ import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { UsuariosComponent } from '../usuarios/usuarios.component';
+import { createAnimation } from '@ionic/angular';
 // import { UsuariosModule } from '../usuarios/usuarios.component';
 
 @Component({
@@ -42,6 +43,9 @@ export class HeaderComponent implements OnInit {
     });
 
   }
+  ngAfterViewInit() {
+    this.animateWelcomeMessage(); // Llama a la animación después de que el DOM esté cargado
+  }
 
 
   sendClickEvent(buttonName: string) {
@@ -54,5 +58,20 @@ export class HeaderComponent implements OnInit {
     }).catch(error => {
       console.error('Error al cerrar sesión:', error);
     });
+  }
+  animateWelcomeMessage() {
+    const element = document.querySelector('h3'); // Selecciona el elemento <h3>
+  
+    if (element) {
+      const animation = createAnimation()
+        .addElement(element) // Solo pasa el elemento si no es null
+        .duration(3000)
+        .iterations(1)
+        .fromTo('opacity', '0', '1')
+        .fromTo('transform', 'translateY(-20px)', 'translateY(0)');
+      animation.play(); // Reproduce la animación
+    } else {
+      console.error('El elemento <h3> no se encontró en el DOM.');
+    }
   }
 }
