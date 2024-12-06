@@ -5,33 +5,46 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="tabs">
+  <!-- Botones de navegación -->
+  <div class="tabs" *ngIf="!isAdmin">
     <ion-button fill="outline" size="small">QR</ion-button>
     <ion-button fill="outline" size="small">Mi clase</ion-button>
+  </div>
+  <div class="tabs">
     <ion-button fill="outline" size="small">Foro</ion-button>
     <ion-button fill="outline" size="small">Mis datos</ion-button>
     <ion-button fill="outline" size="small">Usuarios</ion-button>
   </div>
 
+  <!-- Título de administración de usuarios -->
   <div class="title-container">
     <h1>ADMINISTRAR USUARIOS</h1>
   </div>
 
+  <!-- Lista de usuarios -->
   <div class="user-list">
     <ion-card *ngFor="let user of users" class="user-card">
       <ion-card-header>
-        <ion-card-title class="user-name">{{ user.name }}</ion-card-title>
+        <!-- Mostrar nombre y correo del usuario -->
+        <ion-card-title class="user-name">{{ user.firstName }} {{ user.lastName }}</ion-card-title>
         <ion-card-subtitle class="user-email">{{ user.email }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <ion-button fill="clear" color="danger" (click)="deleteUser(user.id)">
+        <!-- Botón para eliminar usuario, oculto si es admin -->
+        <ion-button
+          *ngIf="user.userName !== 'admin'"
+          fill="clear"
+          color="danger"
+          (click)="confirmDelete(user.userName)"
+        >
           <ion-icon name="trash-bin"></ion-icon>
         </ion-button>
       </ion-card-content>
     </ion-card>
   </div>
 
+  <!-- Botón de cerrar sesión -->
   <div class="logout-container">
-    <ion-button fill="clear" color="primary" (click)="logout()">Cerrar sesión</ion-button>
+    <ion-button fill="clear" color="primary" (click)="confirmLogout()">Cerrar sesión</ion-button>
   </div>
 </ion-content>

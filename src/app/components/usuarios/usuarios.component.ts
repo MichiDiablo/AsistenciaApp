@@ -1,61 +1,86 @@
-import { Component } from '@angular/core';
-import {
-  IonContent,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonButton,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
-  IonIcon, // Asegúrate de importar IonIcon
-} from '@ionic/angular/standalone';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { DatabaseService } from 'src/app/services/database.service';
+import { User } from 'src/app/model/user';
+import { showAlert,showAlertYesNo,showAlertError,showToast } from 'src/app/tools/message-functions';
+import { MessageEnum } from 'src/app/tools/message-enum';
+import { AuthService } from 'src/app/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+import { IonicModule, NavController } from '@ionic/angular';
+import { logOutOutline, qrCodeOutline, mapOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
+
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonContent,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonButton,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardSubtitle,
-    IonCardContent,
-    IonIcon, // Asegúrate de agregar IonIcon aquí
-  ],
+  imports:[
+    CommonModule,    // Permite usar directivas comunes de Angular
+    FormsModule,     // Permite usar formularios
+    IonicModule,     // Permite usar componentes de Ionic como IonContent, IonItem, etc.
+    TranslateModule,
+  ]
 })
-export class UsuariosComponent {
-  // Lista de usuarios simulada
-  users = [
-    { id: 1, name: 'Administrador del Sistema', email: 'admin@duocuc.cl' },
-    { id: 2, name: 'Ana Torres', email: 'atorres@duocuc.cl' },
-    { id: 3, name: 'Carla Fuentes', email: 'cfuentes@duocuc.cl' },
-    { id: 4, name: 'Alberto Valenzuela', email: 'avalenzuela@duocuc.cl' },
-  ];
+export class UsuariosComponent implements OnInit {
+  users: User[] = [];
+  isAdmin: boolean = false; 
+  constructor(private authService: AuthService, private dbService: DatabaseService) {}
 
-  constructor() {}
-
-  // Método para eliminar un usuario por su ID
-  deleteUser(userId: number) {
-    this.users = this.users.filter((user) => user.id !== userId);
-    console.log(`Usuario con ID ${userId} eliminado.`);
+  async ngOnInit() {
+    const currentUser = await this.authService.readAuthUser();
+    this.isAdmin = currentUser?.userName === 'admin';
+    this.loadUsers();
   }
 
-  // Método para cerrar sesión
-  logout() {
-    console.log('Cerrar sesión');
-    // Aquí puedes agregar lógica adicional, como redirigir al usuario a la página de login
+  async loadUsers() {
+    try {
+      this.users = await this.dbService.readUsers();
+    } catch (error) {
+      await showAlertError('UsuariosComponent.loadUsers', error);
+    }
+  }
+
+  /**
+   * 
+   * @param userName - 
+   */
+  async confirmDelete(userName: string) {
+    try {
+      if (userName === 'admin') {
+        await showAlert('El usuario administrador no puede ser eliminado.');
+        return;
+      }
+
+      const response = await showAlertYesNo('¿Estás seguro de que deseas eliminar este usuario?');
+      if (response === MessageEnum.YES) {
+        const success = await this.dbService.deleteByUserName(userName);
+        if (success) {
+          showToast('Usuario eliminado con éxito', 2000);
+          await this.loadUsers(); 
+        } else {
+          throw new Error('No se pudo eliminar el usuario.');
+        }
+      }
+    } catch (error) {
+      await showAlertError('UsuariosComponent.confirmDelete', error);
+    }
+  }
+
+  /**
+   * Cerrar sesión con confirmación.
+   */
+  async confirmLogout() {
+    try {
+      const response = await showAlertYesNo('¿Estás seguro de que deseas cerrar sesión?');
+      if (response === MessageEnum.YES) {
+        await showAlert('Has cerrado sesión correctamente.', false, true);
+        console.log('Cerrar sesión'); // Aquí puedes redirigir a la página de inicio de sesión
+      }
+    } catch (error) {
+      await showAlertError('UsuariosComponent.confirmLogout', error);
+    }
   }
 }

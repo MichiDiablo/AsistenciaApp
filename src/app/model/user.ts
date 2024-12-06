@@ -10,6 +10,7 @@ export class User extends Person {
   secretQuestion = '';
   secretAnswer = '';
   image = '';
+  role = 0; // 0 = Usuario, 1 = Admin
   listaUsuarios: any[] = [];
   asistencia: any = {};
   cuenta = '';
@@ -34,7 +35,8 @@ export class User extends Person {
     educationalLevel: EducationalLevel,
     dateOfBirth: Date,
     address: string,
-    image: string
+    image: string,
+    role: number = 0 // 0 = Usuario, 1 = Admin
   ) {
     let usuario = new User();
     usuario.userName = userName;
@@ -48,6 +50,7 @@ export class User extends Person {
     usuario.dateOfBirth = dateOfBirth;
     usuario.address = address;
     usuario.image = image;
+    usuario.role = role;
     return usuario;
   }
 
@@ -104,6 +107,18 @@ export class User extends Person {
         apellido: 'Pérez',
         nivelEducacional: 'Secundaria',
         fechaNacimiento: new Date('2000-01-01'),
+        role: 0 // Usuario
+      },
+      {
+        cuenta: 'admin',
+        password: 'adminpass',
+        preguntaSecreta: 'Comida favorita',
+        respuestaSecreta: 'Pizza',
+        nombre: 'Admin',
+        apellido: 'System',
+        nivelEducacional: 'Universitaria',
+        fechaNacimiento: new Date('1980-01-01'),
+        role: 1 // Admin
       },
     ];
   }
@@ -129,6 +144,15 @@ export class User extends Person {
         Date of birth: ${convertDateToString(this.dateOfBirth)}\n
         Address: ${this.address}\n
         Image: ${this.image !== ''}\n
+        Role: ${this.role === 1 ? 'Admin' : 'User'}\n
       `;
+  }
+
+  isAdmin(): boolean {
+    return this.role === 1;
+  }
+
+  isUser(): boolean {
+    return this.role === 0;
   }
 }

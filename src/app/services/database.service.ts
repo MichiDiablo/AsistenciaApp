@@ -23,7 +23,9 @@ export class DatabaseService {
     EducationalLevel.findLevel(6)!,
     new Date(2000, 0, 5),
     'La Florida',
-    'default-image.jpg');
+    'default-image.jpg',
+    0 // Usuario normal
+  );
 
   testUser2 = User.getNewUsuario(
     'jperez', 
@@ -36,20 +38,24 @@ export class DatabaseService {
     EducationalLevel.findLevel(5)!,
     new Date(2000, 1, 10),
     'La Pintana',
-    'default-image.jpg');
+    'default-image.jpg',
+    0 // Usuario normal
+  );
 
   testUser3 = User.getNewUsuario(
-    'cmujica', 
-    'cmujica@duocuc.cl', 
-    '0987', 
-    '¿Cuál es tu vehículo favorito?',
-    'moto',
-    'Carla', 
-    'Mujica', 
+    'admin', 
+    'admin@duocuc.cl', 
+    'admin123', 
+    '¿Cuál es tu color favorito?',
+    'azul',
+    'Administrador', 
+    'Sistema', 
     EducationalLevel.findLevel(6)!,
-    new Date(2000, 2, 20),
+    new Date(1980, 0, 1),
     'Providencia',
-    'default-image.jpg');
+    'default-image.jpg',
+    1 // Administrador
+  );
 
   userUpgrades = [
     {
@@ -66,7 +72,8 @@ export class DatabaseService {
         educationalLevel INTEGER NOT NULL,
         dateOfBirth      TEXT NOT NULL,
         address          TEXT NOT NULL,
-        image            TEXT NOT NULL
+        image            TEXT NOT NULL,
+        role             INTEGER NOT NULL
       );
       `]
     }
@@ -84,8 +91,9 @@ export class DatabaseService {
       educationalLevel, 
       dateOfBirth,
       address,
-      image
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      image,
+      role
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
   `;
 
   dataBaseName = 'AsistenciaDataBase';
@@ -96,95 +104,62 @@ export class DatabaseService {
 
   async initializeDataBase() {
     try {
-      await this.sqliteService.createDataBase({database: this.dataBaseName, upgrade: this.userUpgrades});
+      await this.sqliteService.createDataBase({ database: this.dataBaseName, upgrade: this.userUpgrades });
       this.db = await this.sqliteService.open(this.dataBaseName, false, 'no-encryption', 1, false);
       await this.createTestUsers();
       await this.readUsers();
     } catch (error) {
-      showAlertError('DataBaseService.initializeDataBase', error);
+      showAlertError('DatabaseService.initializeDataBase', error);
     }
   }
 
   async createTestUsers() {
     try {
-      // Verifica y guarda al usuario 'atorres' si no existe
       const user1 = await this.readUser(this.testUser1.userName);
       if (!user1) {
         await this.saveUser(this.testUser1);
       }
   
-      // Verifica y guarda al usuario 'jperez' si no existe
       const user2 = await this.readUser(this.testUser2.userName);
       if (!user2) {
         await this.saveUser(this.testUser2);
       }
   
-      // Verifica y guarda al usuario 'cmujica' si no existe
       const user3 = await this.readUser(this.testUser3.userName);
       if (!user3) {
         await this.saveUser(this.testUser3);
       }
-  
     } catch (error) {
-      showAlertError('DataBaseService.createTestUsers', error);
+      showAlertError('DatabaseService.createTestUsers', error);
     }
   }
 
-
-  // Create y Update del CRUD. La creación y actualización de un usuario
-  // se realizarán con el mismo método, ya que la instrucción "INSERT OR REPLACE"
-  // revisa la clave primaria y si el registro es nuevo entonces lo inserta,
-  // pero si el registro ya existe, entonces los actualiza. Se debe tener cuidado de
-  // no permitir que el usuario cambie su correo, pues dado que es la clave primaria
-  // no debe poder ser cambiada.
-  
   async saveUser(user: User): Promise<void> {
     try {
-      this.sqlInsertUpdate = `
-        INSERT OR REPLACE INTO USER (
-          userName, 
-          email, 
-          password, 
-          secretQuestion, 
-          secretAnswer,
-          firstName, 
-          lastName,
-          educationalLevel, 
-          dateOfBirth,
-          address,
-          image
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-      `;
       await this.db.run(this.sqlInsertUpdate, [
-          user.userName, 
-          user.email, 
-          user.password,
-          user.secretQuestion, 
-          user.secretAnswer, 
-          user.firstName, 
-          user.lastName,
-          user.educationalLevel.id, 
-          convertDateToString(user.dateOfBirth), 
-          user.address,
-          user.image
+        user.userName, 
+        user.email, 
+        user.password,
+        user.secretQuestion, 
+        user.secretAnswer, 
+        user.firstName, 
+        user.lastName,
+        user.educationalLevel.id, 
+        convertDateToString(user.dateOfBirth), 
+        user.address,
+        user.image,
+        user.role
       ]);
       await this.readUsers();
     } catch (error) {
-      showAlertError('DataBaseService.saveUser', error);
+      showAlertError('DatabaseService.saveUser', error);
     }
   }
 
-  // Cada vez que se ejecute leerUsuarios() la aplicación va a cargar los usuarios desde la base de datos,
-  // y por medio de la instrucción "this.listaUsuarios.next(usuarios);" le va a notificar a todos los programas
-  // que se subscribieron a la propiedad "listaUsuarios", que la tabla de usuarios se acaba de cargar. De esta
-  // forma los programas subscritos a la variable listaUsuarios van a forzar la actualización de sus páginas HTML.
-  // ReadAll del CRUD. Si existen registros entonces convierte los registros en una lista de usuarios
-  // con la instrucción ".values as Usuario[];". Si la tabla no tiene registros devuelve null.
-
   async readUsers(): Promise<User[]> {
     try {
-      const q = 'SELECT * FROM USER;';
-      const rows = (await this.db.query(q)).values;
+      const query = 'SELECT * FROM USER;';
+      const rows = (await this.db.query(query)).values;
       let users: User[] = [];
       if (rows?.length) {
         users = rows.map((row: any) => this.rowToUser(row));
@@ -192,73 +167,68 @@ export class DatabaseService {
       this.userList.next(users);
       return users;
     } catch (error) {
-      showAlertError('DataBaseService.readUsers', error);
+      showAlertError('DatabaseService.readUsers', error);
       return [];
     }
   }
 
-  // Read del CRUD
   async readUser(userName: string): Promise<User | undefined> {
     try {
-      const q = 'SELECT * FROM USER WHERE userName=?;';
-      const rows = (await this.db.query(q, [userName])).values;
-      return rows?.length? this.rowToUser(rows[0]) : undefined;
+      const query = 'SELECT * FROM USER WHERE userName = ?;';
+      const rows = (await this.db.query(query, [userName])).values;
+      return rows?.length ? this.rowToUser(rows[0]) : undefined;
     } catch (error) {
-      showAlertError('DataBaseService.readUser', error);
+      showAlertError('DatabaseService.readUser', error);
       return undefined;
     }
   }
 
-  // Delete del CRUD
   async deleteByUserName(userName: string): Promise<boolean> {
     try {
-      const q = 'DELETE FROM USER WHERE userName=?';
-      const result: capSQLiteChanges = await this.db.run(q, [userName]);
+      const query = 'DELETE FROM USER WHERE userName = ?;';
+      const result: capSQLiteChanges = await this.db.run(query, [userName]);
       const rowsAffected = result.changes?.changes ?? 0;
       await this.readUsers();
       return rowsAffected > 0;
     } catch (error) {
-      showAlertError('DataBaseService.deleteByUserName', error);
+      showAlertError('DatabaseService.deleteByUserName', error);
       return false;
     }
   }
 
-  // Validar usuario
   async findUser(userName: string, password: string): Promise<User | undefined> {
     try {
-      const q = 'SELECT * FROM USER WHERE userName=? AND password=?;';
-      const rows = (await this.db.query(q, [userName, password])).values;
-      return rows?.length? this.rowToUser(rows[0]) : undefined;
+      const query = 'SELECT * FROM USER WHERE userName = ? AND password = ?;';
+      const rows = (await this.db.query(query, [userName, password])).values;
+      return rows?.length ? this.rowToUser(rows[0]) : undefined;
     } catch (error) {
-      showAlertError('DataBaseService.findUser', error);
-      return undefined;
-    }
-  }
-
-  async findUserByUserName(userName: string): Promise<User | undefined> {
-    try {
-      const q = 'SELECT * FROM USER WHERE userName=?;';
-      const rows = (await this.db.query(q, [userName])).values;
-      return rows?.length? this.rowToUser(rows[0]) : undefined;
-    } catch (error) {
-      showAlertError('DataBaseService.findUserByEmail', error);
+      showAlertError('DatabaseService.findUser', error);
       return undefined;
     }
   }
 
   async findUserByEmail(email: string): Promise<User | undefined> {
     try {
-      const q = 'SELECT * FROM USER WHERE email=?;';
-      const rows = (await this.db.query(q, [email])).values;
-      if (!rows || rows.length === 0) {
-        return undefined; // Si no se encuentra el usuario, regresa undefined
-      }
-      return this.rowToUser(rows[0]); // Asegúrate de que rowToUser maneja el mapeo correctamente
+      const query = 'SELECT * FROM USER WHERE email = ?;';
+      const rows = (await this.db.query(query, [email])).values;
+      return rows?.length ? this.rowToUser(rows[0]) : undefined;
     } catch (error) {
-      showAlertError('DataBaseService.findUserByEmail', error);
+      showAlertError('DatabaseService.findUserByEmail', error);
       return undefined;
     }
   }
+
+  async isAdmin(userName: string): Promise<boolean> {
+    try {
+      const query = 'SELECT role FROM USER WHERE userName = ?;';
+      const rows = (await this.db.query(query, [userName])).values;
+      return rows?.length ? rows[0].role === 1 : false;
+    } catch (error) {
+      showAlertError('DatabaseService.isAdmin', error);
+      return false;
+    }
+  }
+
   private rowToUser(row: any): User {
     try {
       const user = new User();
@@ -272,11 +242,12 @@ export class DatabaseService {
       user.educationalLevel = EducationalLevel.findLevel(row.educationalLevel) || new EducationalLevel();
       user.dateOfBirth = convertStringToDate(row.dateOfBirth);
       user.address = row.address;
+      user.image = row.image;
+      user.role = row.role;
       return user;
     } catch (error) {
-      showAlertError('DataBaseService.rowToUser', error);
+      showAlertError('DatabaseService.rowToUser', error);
       return new User();
     }
   }
-
 }

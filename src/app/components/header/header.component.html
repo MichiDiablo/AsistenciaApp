@@ -1,12 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
-
     <ion-title>
-      <h3 class="margin-top-6"> {{ 'AppName' | translate }} </h3>
+      <h3 class="margin-top-6">{{ 'AppName' | translate }}</h3>
     </ion-title>
 
     <div slot="end">
-
       <ion-button (click)="sendClickEvent('map')" size="small" fill="clear">
         <ion-icon name="map-outline" color="light"></ion-icon>
       </ion-button>
@@ -18,7 +16,10 @@
       <ion-button id="logout" (click)="logout()" size="small" fill="clear">
         <ion-icon name="log-out-outline" color="light"></ion-icon>
       </ion-button>
-
     </div>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <app-usuarios *ngIf="isAdmin"></app-usuarios>
+</ion-content>
