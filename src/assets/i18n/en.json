@@ -1,5 +1,5 @@
 {
-    "AppName": "Asistencia DUOC",
+    "AppName": "DUOC Attendance",
     "AuthorText": "Developed by:",
     "Author": "Cristián Gómez Vega",
     "Language": "Language",
@@ -69,8 +69,6 @@
     "ThemePage.Form.ToggleLabel": "Enable notifications",
     "ThemePage.Form.CheckboxLabel": "I accept the terms",
 
-
-    
     "QRPage.Sede": "Campus:",
     "QRPage.IdAsignatura": "Course ID:",
     "QRPage.Seccion": "Section:",
@@ -81,6 +79,8 @@
     "QRPage.BloqueTermino": "End Block:",
     "QRPage.HoraInicio": "Start Time:",
     "QRPage.HoraFin": "End Time:",
-    "QRPage.ScanPrompt": "You must scan the QR"
-    
+    "QRPage.ScanPrompt": "You must scan the QR",
+
+    "AdminUsers.Title": "Manage Users",
+    "Logout.Button": "Log Out"
 }

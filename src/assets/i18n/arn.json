@@ -30,7 +30,6 @@
     "HomePage.Button.Data": "Ñi rakizuam",
     "HomePage.Button.Class": "Kimeltuwün",
 
-
     "ThemePage.Label.ColorTheme": "Dugün de kolor:",
     "ThemePage.Color.Light": "Külfün",
     "ThemePage.Color.Dark": "Pewma",
@@ -80,6 +79,8 @@
     "QRPage.BloqueTermino": "Rume küla:",
     "QRPage.HoraInicio": "Püle hora:",
     "QRPage.HoraFin": "Rume hora:",
-    "QRPage.ScanPrompt": "Ütüfülem müten QR"
-    
+    "QRPage.ScanPrompt": "Ütüfülem müten QR",
+
+    "AdminUsers.Title": "Kimünfe Wece",
+    "Logout.Button": "Tuway"
 }

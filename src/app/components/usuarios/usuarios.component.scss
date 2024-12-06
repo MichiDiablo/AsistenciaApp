@@ -1,11 +1,11 @@
 ion-content {
-  --background: #f5f5f5;
+  
 
-  .tabs {
-    display: flex;
-    justify-content: space-around;
-    margin: 10px 0;
-  }
+  // .tabs {
+  //   display: flex;
+  //   justify-content: space-around;
+  //   margin: 10px 0;
+  // }
 
   .title-container {
     text-align: center;
@@ -15,7 +15,7 @@ ion-content {
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #4caf50;
+    color: black;
     text-transform: uppercase;
   }
 

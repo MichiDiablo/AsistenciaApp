@@ -29,6 +29,7 @@
     "HomePage.Button.Forum": "Foro",
     "HomePage.Button.Data": "Mis datos",
     "HomePage.Button.Class": "Mi clase",
+    "HomePage.Button.Users": "Usuarios",
 
     "ThemePage.Label.ColorTheme": "Tema de color:",
     "ThemePage.Color.Light": "Claro",
@@ -79,5 +80,8 @@
     "QRPage.BloqueTermino": "Bloque de termino:",
     "QRPage.HoraInicio": "Hora de inicio:",
     "QRPage.HoraFin": "Hora de termino:",
-    "QRPage.ScanPrompt": "Debes escanear el QR"
+    "QRPage.ScanPrompt": "Debes escanear el QR",
+
+    "AdminUsers.Title": "Administrar Usuarios",
+    "Logout.Button": "Cerrar sesión"
 }

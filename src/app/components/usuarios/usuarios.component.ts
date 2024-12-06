@@ -76,6 +76,7 @@ export class UsuariosComponent implements OnInit {
       const response = await showAlertYesNo('¿Estás seguro de que deseas cerrar sesión?');
       if (response === MessageEnum.YES) {
         await showAlert('Has cerrado sesión correctamente.', false, true);
+        this.authService.logout();
         console.log('Cerrar sesión'); // Aquí puedes redirigir a la página de inicio de sesión
       }
     } catch (error) {

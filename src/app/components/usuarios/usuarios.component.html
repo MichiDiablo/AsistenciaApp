@@ -1,26 +1,11 @@
 <ion-content>
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Sistema de Asistencia DUOC</ion-title>
-    </ion-toolbar>
   </ion-header>
-
-  <!-- Botones de navegación -->
-  <!-- <div class="tabs" *ngIf="!isAdmin">
-    <ion-button fill="outline" size="small">QR</ion-button>
-    <ion-button fill="outline" size="small">Mi clase</ion-button>
-  </div> -->
-   <!-- <div class="tabs">
-    <ion-button fill="outline" size="small">Foro</ion-button>
-    <ion-button fill="outline" size="small">Mis datos</ion-button>
-    <ion-button fill="outline" size="small">Usuarios</ion-button>
-  </div>  -->
-
-  <!-- Título de administración de usuarios -->
+<!-- Título de administración de usuarios -->
   <div class="title-container">
-    <h1>ADMINISTRAR USUARIOS</h1>
+    <h1>{{ "AdminUsers.Title" | translate }}</h1>
   </div>
-
+  <img class="background-image" src="/assets/images/Fondo.jpg">
   <!-- Lista de usuarios -->
   <div class="user-list">
     <ion-card *ngFor="let user of users" class="user-card">
@@ -43,7 +28,9 @@
 
   <!-- Botón de cerrar sesión -->
   <div class="logout-container">
-    <ion-button fill="clear" color="primary" (click)="confirmLogout()">Cerrar sesión</ion-button>
+    <ion-button fill="clear" color="primary" (click)="confirmLogout()">
+      {{ "Logout.Button" | translate }}
+    </ion-button>
   </div>
   
 </ion-content>

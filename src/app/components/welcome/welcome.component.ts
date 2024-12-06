@@ -7,6 +7,7 @@ import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/services/auth.service';
 
 
+
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
