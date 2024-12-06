@@ -8,7 +8,7 @@
     </div>
     <div slot="end" class="ion-margin">
       <ion-button shape="round" size="small" (click)="navigateTheme()">
-        Tema
+        {{ "SecurityQuestion.Theme" | translate }}
         <ion-icon slot="start" name="color-wand-outline"></ion-icon>
       </ion-button>
     </div>
@@ -35,19 +35,19 @@
     <ion-card-content class="transparent-input text-center">
   
       <ion-item class="margin-bottom-6 float-landscape">
-        <ion-label position="stacked">Pregunta de seguridad:</ion-label>
+        <ion-label position="stacked">{{ "SecurityQuestion.Question" | translate }}</ion-label>
         <ion-text>
           {{ pregunta }}
         </ion-text>
       </ion-item>
   
       <ion-item>
-        <ion-label position="stacked">Respuesta:</ion-label>
+        <ion-label position="stacked">{{ "SecurityQuestion.Answer" | translate }}</ion-label>
         <ion-input [(ngModel)]="respuesta" placeholder="Escribe tu respuesta aquí"></ion-input>
       </ion-item>
 
       <div class="ion-text-center margin-top-6" style="clear: both;">
-        <ion-button class="enter-button normal-text" shape="round" (click)="verificarRespuesta()">Verificar</ion-button>
+        <ion-button class="enter-button normal-text" shape="round" (click)="verificarRespuesta()">{{ "SecurityQuestion.Verify" | translate }}</ion-button>
       </div>
   
     </ion-card-content>

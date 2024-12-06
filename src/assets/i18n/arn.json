@@ -1,7 +1,7 @@
 {
     "AppName": "Asistencia DUOC",
     "AuthorText": "Rakinon tamiñ:",
-    "Author": "Escape From Duoc",
+    "Author": "Cristián Gómez Vega",
     "Language": "Dugün",
     "Language.English": "English",
     "Language.Spanish": "Español",
@@ -19,7 +19,8 @@
     "Login.Button.ForgotPassword": "Ñi rakinmapu elañmafi",
     "Login.Button.DarkMode": "Pewma külen müleyin",
 
-    "WelcomePage.Title.Wellcome": "¡Tüfachi mülenmi Asistencia DUOC",
+    "WelcomePage.Title.Welcome": "¡Tüfachi mülenmi Asistencia DUOC!",
+    "WelcomePage.Title.WelcomeToYourData": "Tüfachi müley ñi dungu",
     "WelcomePage.Button.Map": "¿Müley kiñe peney ka? Eymi müpelnge mapan tüfachi",
     "WelcomePage.Button.Scan": "Müpelnge tüfachi QR",
 
@@ -82,5 +83,38 @@
     "QRPage.ScanPrompt": "Ütüfülem müten QR",
 
     "AdminUsers.Title": "Kimünfe Wece",
-    "Logout.Button": "Tuway"
+    "Logout.Button": "Tuway",
+
+    "PostManagement.Title": "Wece Ülkan",
+    "PostManagement.TitleLabel": "Wüñam",
+    "PostManagement.DescriptionLabel": "Püllün",
+    "PostManagement.Button.Clear": "Elimikan",
+    "PostManagement.RecentPostsTitle": "Wece Ülkan Tüfachi",
+    "PostManagement.Post": "Ülkan",
+
+    "Map.DUOC": "DUOC",
+    "Map.Here": "Tüfachi",
+    "Map.Route": "Rüpü",
+
+    "Operation.SuccessMessage": "Tüfachi rakin müley küme kimün!",
+    "Operation.ActionCompleted": "Eymi rakin ka tüfachi müley küme kimün.",
+    "Operation.PasswordMessage": "Ñi rakinmapu müley:",
+    "Operation.BackToHome": "Tüway ñi Wüña",
+
+    "Error.SorryMessage": "Küme küdaw ñi rakin, kiñe error müley!",
+    "Error.InvalidCredentials": "Eymi e-mail ka rakinmapu elañmafi. Eymi pewkantufe.",
+    "Error.BackToHome": "Tüway ñi Wüña",
+
+    "SecurityQuestion.Theme": "Dugün",
+    "SecurityQuestion.Question": "Rakin küme pewma:",
+    "SecurityQuestion.Answer": "Wüña:",
+    "SecurityQuestion.Verify": "Külfün",
+
+    "UserRegistration.Title": "Üñoyan Rakin",
+    "UserRegistration.UsernameRequired": "Üñoyan zugun müley nien rume 4 ütrün tüfachi.",
+    "UserRegistration.ValidEmail": "Eymi mülen kiñe küme e-mail.",
+    "UserRegistration.PasswordRequirement": "Rakinmapu müley nien rume 6 ütrün tüfachi.",
+    "UserRegistration.BirthDate": "We tripantü",
+    "UserRegistration.Address": "Ruka Dungu",
+    "UserRegistration.RegisterUser": "Üñoyañ Rakin"
 }

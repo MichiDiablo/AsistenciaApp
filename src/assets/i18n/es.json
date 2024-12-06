@@ -1,7 +1,7 @@
 {
     "AppName": "Asistencia DUOC",
     "AuthorText": "Desarrollado por:",
-    "Author": "Escape From Duoc",
+    "Author": "Cristián Gómez Vega",
     "Language": "Idioma",
     "Language.English": "English",
     "Language.Spanish": "Español",
@@ -17,10 +17,11 @@
     "Login.Button.Login": "Ingresar",
     "Login.Button.Signin": "Registrarse",
     "Login.Button.ForgotPassword": "Olvidé mi contraseña",
-    "Login.Button.DarkMode": "Oscuro",
+    "Login.Button.DarkMode": "Modo oscuro",
 
-    "WelcomePage.Title.Welcome": "¡Bienvenid@ a Asistencia DUOC",
-    "WelcomePage.Button.Map": "¿Vas atrasado? chequea el mapa aquí",
+    "WelcomePage.Title.Welcome": "¡Bienvenido(a) a Asistencia DUOC!",
+    "WelcomePage.Title.WelcomeToYourData": "Bienvenido(a) a tus datos",
+    "WelcomePage.Button.Map": "¿Vas atrasado? Chequea el mapa aquí",
     "WelcomePage.Button.Scan": "Escanea el QR aquí",
 
     "HomePage.Button.Wellcome": "Inicio",
@@ -29,7 +30,6 @@
     "HomePage.Button.Forum": "Foro",
     "HomePage.Button.Data": "Mis datos",
     "HomePage.Button.Class": "Mi clase",
-    "HomePage.Button.Users": "Usuarios",
 
     "ThemePage.Label.ColorTheme": "Tema de color:",
     "ThemePage.Color.Light": "Claro",
@@ -49,7 +49,7 @@
     "ThemePage.Button.Light": "Botón Claro",
     "ThemePage.Button.Dark": "Botón Oscuro",
     "ThemePage.Button.Home": "Inicio",
-    "ThemePage.Button.Logout": "Salir",
+    "ThemePage.Button.Logout": "Cerrar sesión",
     
     "ThemePage.Card.Title": "Título de la Tarjeta",
     "ThemePage.Card.Subtitle": "Subtítulo de la Tarjeta",
@@ -77,11 +77,45 @@
     "QRPage.Profesor": "Profesor:",
     "QRPage.Dia": "Día:",
     "QRPage.BloqueInicio": "Bloque de inicio:",
-    "QRPage.BloqueTermino": "Bloque de termino:",
+    "QRPage.BloqueTermino": "Bloque de término:",
     "QRPage.HoraInicio": "Hora de inicio:",
-    "QRPage.HoraFin": "Hora de termino:",
+    "QRPage.HoraFin": "Hora de término:",
     "QRPage.ScanPrompt": "Debes escanear el QR",
 
     "AdminUsers.Title": "Administrar Usuarios",
-    "Logout.Button": "Cerrar sesión"
+    "Logout.Button": "Cerrar sesión",
+
+    "PostManagement.Title": "Gestión de Publicaciones",
+    "PostManagement.TitleLabel": "Título",
+    "PostManagement.DescriptionLabel": "Descripción",
+    "PostManagement.Button.Clear": "Limpiar",
+    "PostManagement.RecentPostsTitle": "Publicaciones Recientes",
+    "PostManagement.Post": "Publicación",
+
+    
+    "Map.DUOC": "DUOC",
+    "Map.Here": "Aquí",
+    "Map.Route": "Ruta",
+
+    "Operation.SuccessMessage": "¡Operación realizada correctamente!",
+    "Operation.ActionCompleted": "Tu acción se ha completado exitosamente.",
+    "Operation.PasswordMessage": "Tu contraseña es:",
+    "Operation.BackToHome": "Volver al Inicio",
+
+    "Error.SorryMessage": "¡Lo sentimos, ocurrió un error!",
+    "Error.InvalidCredentials": "Tu correo o contraseña son incorrectos. Por favor, intenta nuevamente.",
+    "Error.BackToHome": "Volver al Inicio",
+
+    "SecurityQuestion.Theme": "Tema",
+    "SecurityQuestion.Question": "Pregunta de seguridad:",
+    "SecurityQuestion.Answer": "Respuesta:",
+    "SecurityQuestion.Verify": "Verificar",
+
+    "UserRegistration.Title": "Registro de Usuario",
+    "UserRegistration.UsernameRequired": "El nombre de usuario es obligatorio y debe tener al menos 4 caracteres.",
+    "UserRegistration.ValidEmail": "Ingresa un correo válido.",
+    "UserRegistration.PasswordRequirement": "La contraseña debe tener al menos 6 caracteres.",
+    "UserRegistration.BirthDate": "Fecha de Nacimiento",
+    "UserRegistration.Address": "Dirección",
+    "UserRegistration.RegisterUser": "Registrar Usuario"
 }

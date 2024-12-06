@@ -1,7 +1,7 @@
 <ion-content>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Registro de Usuario</ion-title>
+      <ion-title>{{ "UserRegistration.Title" | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
   <!-- <img class="background-image" src="/assets/images/Duoc.jpg"> -->
@@ -17,7 +17,7 @@
       </ion-input>
     </ion-item>
     <ion-text *ngIf="isControlInvalid('userName')" color="danger">
-      El nombre de usuario es obligatorio y debe tener al menos 4 caracteres.
+      {{ "UserRegistration.UsernameRequired" | translate }}
     </ion-text>
 
     <!-- Correo Electrónico -->
@@ -30,7 +30,7 @@
       </ion-input>
     </ion-item>
     <ion-text *ngIf="isControlInvalid('email')" color="danger">
-      Ingresa un correo válido.
+      {{ "UserRegistration.ValidEmail" | translate }}
     </ion-text>
 
     <!-- Contraseña -->
@@ -43,7 +43,7 @@
       </ion-input>
     </ion-item>
     <ion-text *ngIf="isControlInvalid('password')" color="danger">
-      La contraseña debe tener al menos 6 caracteres.
+      {{ "UserRegistration.PasswordRequirement" | translate }}
     </ion-text>
 
     <!-- Pregunta Secreta -->
@@ -95,7 +95,7 @@
     </ion-item>
 
     <!-- Fecha de Nacimiento -->
-    <div class="section-title">Fecha de Nacimiento</div>
+    <div class="section-title">{{ "UserRegistration.BirthDate" | translate }}</div>
     <ion-item>
       <ion-datetime
         formControlName="dateOfBirth"
@@ -105,7 +105,7 @@
     </ion-item>
 
     <!-- Dirección -->
-    <div class="section-title">Dirección</div>
+    <div class="section-title">{{ "UserRegistration.Address" | translate }}</div>
     <ion-item>
       <ion-input
         formControlName="address"
@@ -116,7 +116,7 @@
 
     <!-- Botón de Registro -->
     <ion-button expand="block" type="submit" [disabled]="registerForm.invalid" class="submit-button">
-      Registrar Usuario
+      {{ "UserRegistration.RegisterUser" | translate }}
     </ion-button>
   </form>
 </ion-content>

@@ -27,14 +27,14 @@
     <ion-card-content class="transparent-input text-center">
       <ion-item class="margin-bottom-6 float-landscape">
         <ion-text class="content ion-text-center">
-          <h2>¡Lo sentimos, ocurrió un error!</h2>
-          <p>Tu correo o contraseña son incorrectos. Por favor, intenta nuevamente.</p>
+          <h2>{{ "Error.SorryMessage" | translate }}</h2>
+          <p>{{ "Error.InvalidCredentials" | translate }}</p>
         </ion-text>
       </ion-item>
 
       <div class="ion-text-center margin-top-6" style="clear: both;">
         <ion-button class="enter-button normal-text" shape="round" (click)="volverIntentar()">
-          Volver al Inicio
+          {{ "Error.BackToHome" | translate }}
         </ion-button>
       </div>
 

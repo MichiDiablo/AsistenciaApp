@@ -20,6 +20,7 @@
     "Login.Button.DarkMode": "Dark Mode",
 
     "WelcomePage.Title.Welcome": "Welcome to DUOC Attendance App",
+    "WelcomePage.Title.WelcomeToYourData": "Welcome to your data",
     "WelcomePage.Button.Map": "Are you running late? Check the map here",
     "WelcomePage.Button.Scan": "Scan the QR here",
 
@@ -37,7 +38,7 @@
     "ThemePage.Color.Red": "Red",
     "ThemePage.Color.Facebook": "Facebook",
     "ThemePage.Color.Instagram": "Instagram",
-    "ThemePage.Color.Duoc": "Duoc",
+    "ThemePage.Color.Duoc": "DUOC",
     
     "ThemePage.Button.Primary": "Primary Button",
     "ThemePage.Button.Secondary": "Secondary Button",
@@ -82,5 +83,40 @@
     "QRPage.ScanPrompt": "You must scan the QR",
 
     "AdminUsers.Title": "Manage Users",
-    "Logout.Button": "Log Out"
+    "Logout.Button": "Log Out",
+
+    "PostManagement.Title": "Post Management",
+    "PostManagement.TitleLabel": "Title",
+    "PostManagement.DescriptionLabel": "Description",
+    "PostManagement.Button.Clear": "Clear",
+    "PostManagement.RecentPostsTitle": "Recent Posts",
+    "PostManagement.Post": "Post",
+
+    "Map.DUOC": "DUOC",
+    "Map.Here": "Here",
+    "Map.Route": "Route",
+
+    "QR.StopScanning": "Stop QR Scanning",
+
+    "Operation.SuccessMessage": "Operation completed successfully!",
+    "Operation.ActionCompleted": "Your action has been completed successfully.",
+    "Operation.PasswordMessage": "Your password is:",
+    "Operation.BackToHome": "Back to Home",
+
+    "Error.SorryMessage": "We're sorry, an error occurred!",
+    "Error.InvalidCredentials": "Your email or password is incorrect. Please try again.",
+    "Error.BackToHome": "Back to Home",
+
+    "SecurityQuestion.Theme": "Theme",
+    "SecurityQuestion.Question": "Security Question:",
+    "SecurityQuestion.Answer": "Answer:",
+    "SecurityQuestion.Verify": "Verify",
+
+    "UserRegistration.Title": "User Registration",
+    "UserRegistration.UsernameRequired": "The username is required and must have at least 4 characters.",
+    "UserRegistration.ValidEmail": "Enter a valid email.",
+    "UserRegistration.PasswordRequirement": "The password must have at least 6 characters.",
+    "UserRegistration.BirthDate": "Date of Birth",
+    "UserRegistration.Address": "Address",
+    "UserRegistration.RegisterUser": "Register User"
 }

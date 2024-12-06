@@ -10,6 +10,7 @@ import { APIClientService } from 'src/app/services/apiclient.service';
 import { EducationalLevel } from 'src/app/model/educational-level';
 import { showToast } from 'src/app/tools/message-functions';
 import { DatePickerComponent } from '../date-picker/date-picker.component';
+import { TranslateModule } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-mis-datos',
@@ -17,7 +18,7 @@ import { DatePickerComponent } from '../date-picker/date-picker.component';
   styleUrls: ['./mis-datos.component.scss'],
   standalone: true,
   imports: [IonButton, IonInput, IonContent, IonHeader, IonTitle, IonToolbar
-    , CommonModule, FormsModule, IonItem, IonSelect, IonSelectOption, DatePickerComponent]
+    , CommonModule, FormsModule, IonItem, IonSelect, IonSelectOption, DatePickerComponent, TranslateModule]
 })
 export class MisDatosComponent implements OnInit {
 

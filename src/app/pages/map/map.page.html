@@ -11,22 +11,22 @@
   <ion-toolbar class="ion-text-center" color="primary">
     <ion-button shape="round" color="secondary" size="small"
         (click)="goToDUOC()" >
-      DUOC
+        {{ "Map.DUOC" | translate }}
     </ion-button>
 
     <ion-button shape="round" color="secondary" size="small"
         (click)="goToMyPosition()">
-      Aquí
+        {{ "Map.Here" | translate }}
     </ion-button>
 
     <ion-button shape="round" color="secondary" size="small"
         (click)="showRouteToDuoc()">
-      Ruta
+        {{ "Map.Route" | translate }}
     </ion-button>
 
     <ion-button shape="round" color="secondary" size="small"
         (click)="navegarMisDatos()">
-      Mis datos
+        {{ "HomePage.Button.Data" | translate }}
     </ion-button>
 
     <div *ngIf="distance">

@@ -28,15 +28,16 @@
     <ion-card-content class="transparent-input text-center">
       <ion-item class="margin-bottom-6 float-landscape">
         <ion-text class="content ion-text-center">
-          <h2>¡Operación realizada correctamente!</h2>
-          <p>Tu acción se ha completado exitosamente.</p>
-          <p *ngIf="recoveredPassword">Tu contraseña es: <strong>{{ recoveredPassword }}</strong></p>
+          <h2>{{ "Operation.SuccessMessage" | translate }}</h2>
+          <p>{{ "Operation.ActionCompleted" | translate }}</p>
+          <p *ngIf="recoveredPassword">{{ "Operation.PasswordMessage" | translate }} <strong>{{ recoveredPassword }}</strong></p>
         </ion-text>
       </ion-item>
+      
 
       <div class="ion-text-center margin-top-6" style="clear: both;">
         <ion-button class="enter-button normal-text" shape="round" (click)="irAInicio()">
-          Volver al Inicio
+          {{ "Operation.BackToHome" | translate }}
         </ion-button>
       </div>
 
@@ -45,21 +46,3 @@
 </ion-content>
 
 
-<!-- <ion-content class="ion-padding">
-
-  <div class="content ion-text-center">
-    <ion-icon name="checkmark-circle-outline" size="large" color="success"></ion-icon>
-    <h2>¡Operación realizada correctamente!</h2>
-    <p>Tu acción se ha completado exitosamente.</p>
-    
-     Mostrar la contraseña recuperada
-    <p *ngIf="recoveredPassword">Tu contraseña es: <strong>{{ recoveredPassword }}</strong></p>
-
-    
-    <div class="ion-text-center margin-top-6" style="clear: both;">
-      <ion-button class="enter-button normal-text" shape="round" (click)="irAInicio()">
-        Volver al Inicio
-      </ion-button>
-    </div>
-  </div>
-</ion-content> -->

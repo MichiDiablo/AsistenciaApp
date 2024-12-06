@@ -19,6 +19,7 @@ import {
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-registro',
@@ -39,7 +40,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IonSelect,
     IonSelectOption,
     IonDatetime,
-    IonButton
+    IonButton,
+    TranslateModule
   ]
 })
 export class RegistroPage implements OnInit {

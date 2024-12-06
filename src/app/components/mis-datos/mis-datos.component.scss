@@ -1,39 +1,50 @@
 ion-content {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 100%; 
-  background-color: #000; 
-  padding: 16px; 
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 16px;
 
   .form-container {
-    background-color: #1a1a1a; 
-    padding: 20px; 
-    border-radius: 12px; 
-    max-width: 400px; 
-    width: 100%; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    /* Fondo translúcido */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro translúcido */
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil */
   }
 
   h3 {
-    text-align: center; 
-    margin-bottom: 16px; 
-    color: #fff; 
+    text-align: center;
+    margin-bottom: 16px;
+    color: #fff; /* Título en blanco */
+    font-size: 1.5rem; /* Tamaño del título */
   }
 
   ion-item, ion-input, ion-select, app-date-picker {
-    max-width: 100%; 
-    margin-bottom: 12px; 
+    max-width: 100%;
+    margin-bottom: 12px;
+
+    /* Fondo negro con texto blanco */
+    --background: rgba(0, 0, 0, 0.8); /* Fondo negro translúcido */
+    --color: #fff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    padding: 10px; /* Espaciado interno */
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
   }
 
   ion-button {
     display: block;
-    margin: 20px auto 0; 
-    width: 200px; 
-    height: 50px; 
-    background-color: #007bff; 
+    margin: 20px auto 0;
+    width: 200px;
+    height: 50px;
+    background-color: #007bff;
+    color: #fff; /* Texto blanco en el botón */
     border-radius: 25px;
     font-weight: bold;
-    text-transform: uppercase; 
+    text-transform: uppercase;
+    font-size: 1.1rem; /* Tamaño de letra del botón */
   }
 }

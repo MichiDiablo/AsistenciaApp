@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { EventEmitter } from '@angular/core';
 import jsQR, { QRCode } from 'jsqr';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-qrwebscanner',
   templateUrl: './qr-web-scanner.component.html',
   styleUrls: ['./qr-web-scanner.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, TranslateModule]
 })
 export class QrWebScannerComponent implements OnDestroy {
 
