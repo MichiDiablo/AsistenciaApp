@@ -79,10 +79,12 @@ describe('Verificar mi aplicación', () => {
       cy.get('#password').type('1234');
       cy.contains('Ingresar').click();
       cy.intercept('/ingresar').as('route').then(() => {
-        cy.get('[ng-reflect-value="mis-datos"]').click();      
+        cy.get('[ng-reflect-value="mis-datos"]').click();
+              
         
       });
     });
   })
 
+  
 })

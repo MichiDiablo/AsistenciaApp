@@ -8,8 +8,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule, NavController } from '@ionic/angular';
-import { logOutOutline, qrCodeOutline, mapOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
+import { trashOutline } from 'ionicons/icons';
 
 
 @Component({
@@ -29,6 +29,7 @@ export class UsuariosComponent implements OnInit {
   auth=inject(AuthService);
   user:any;
   constructor(private authService: AuthService, private dbService: DatabaseService) {
+    addIcons({trashOutline})
     this.loadUsers();
   }
 
@@ -41,6 +42,8 @@ export class UsuariosComponent implements OnInit {
       this.users = users;
     });
   }
+
+  
 
   /**
    * 
