@@ -6,15 +6,15 @@
   </ion-header>
 
   <!-- Botones de navegación -->
-  <div class="tabs" *ngIf="!isAdmin">
+  <!-- <div class="tabs" *ngIf="!isAdmin">
     <ion-button fill="outline" size="small">QR</ion-button>
     <ion-button fill="outline" size="small">Mi clase</ion-button>
-  </div>
-  <div class="tabs">
+  </div> -->
+   <!-- <div class="tabs">
     <ion-button fill="outline" size="small">Foro</ion-button>
     <ion-button fill="outline" size="small">Mis datos</ion-button>
     <ion-button fill="outline" size="small">Usuarios</ion-button>
-  </div>
+  </div>  -->
 
   <!-- Título de administración de usuarios -->
   <div class="title-container">
@@ -30,14 +30,12 @@
         <ion-card-subtitle class="user-email">{{ user.email }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <!-- Botón para eliminar usuario, oculto si es admin -->
         <ion-button
-          *ngIf="user.userName !== 'admin'"
-          fill="clear"
-          color="danger"
-          (click)="confirmDelete(user.userName)"
-        >
-          <ion-icon name="trash-bin"></ion-icon>
+        
+        
+        color="danger"
+        (click)="confirmDelete(user.userName)">
+        <ion-icon name="trash-bin" color="light"></ion-icon>
         </ion-button>
       </ion-card-content>
     </ion-card>
@@ -47,4 +45,5 @@
   <div class="logout-container">
     <ion-button fill="clear" color="primary" (click)="confirmLogout()">Cerrar sesión</ion-button>
   </div>
+  
 </ion-content>

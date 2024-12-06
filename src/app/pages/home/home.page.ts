@@ -15,6 +15,7 @@ import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { ForumComponent } from 'src/app/components/forum/forum.component';
 import { MisDatosComponent } from 'src/app/components/mis-datos/mis-datos.component';
 import { MapComponent } from 'src/app/components/map/map.component';
+import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.component';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ import { MapComponent } from 'src/app/components/map/map.component';
       CommonModule, FormsModule, TranslateModule, IonContent
     , HeaderComponent, FooterComponent
     , WelcomeComponent, QrWebScannerComponent, DinosaurComponent
-    , ForumComponent, MisDatosComponent, MapComponent
+    , ForumComponent, MisDatosComponent, MapComponent, UsuariosComponent
   ]
 })
 export class HomePage {

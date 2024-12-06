@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule, NavController } from '@ionic/angular';
@@ -19,12 +19,12 @@ import { UsuariosComponent } from '../usuarios/usuarios.component';
     CommonModule,    // Permite usar directivas comunes de Angular
     FormsModule,     // Permite usar formularios
     IonicModule,     // Permite usar componentes de Ionic como IonContent, IonItem, etc.
-    TranslateModule,
-    UsuariosComponent
+    TranslateModule
   ]
 })
 export class HeaderComponent implements OnInit {
-  isAdmin: boolean = false; 
+  user:any;
+  auth=inject(AuthService);
 
   @Output() headerClick = new EventEmitter<string>();
 
@@ -37,19 +37,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Verificar si el usuario actual es administrador
-    this.authService.readAuthUser().then(user => {
-      if (user) {
-        this.db.readUser(user.userName).then(dbUser => {
-          this.isAdmin = dbUser?.role === 1; 
-        }).catch(error => {
-          console.error('Error al obtener información del usuario desde la base de datos:', error);
-        });
-      }
-    }).catch(error => {
-      console.error('Error al verificar el usuario autenticado:', error);
+    this.auth.readAuthUser().then(user => {
+      this.user=user;
     });
+
   }
+
 
   sendClickEvent(buttonName: string) {
     this.headerClick.emit(buttonName);

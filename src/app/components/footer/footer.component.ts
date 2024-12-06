@@ -1,10 +1,13 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, NgZone, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonFooter, IonToolbar, IonSegment, IonSegmentButton, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { homeOutline, pawOutline, pencilOutline, qrCodeOutline, bookOutline, personOutline, mapOutline } from 'ionicons/icons';
+import { UsuariosComponent } from '../usuarios/usuarios.component';
+
 
 @Component({
   selector: 'app-footer',
@@ -19,6 +22,14 @@ import { homeOutline, pawOutline, pencilOutline, qrCodeOutline, bookOutline, per
   ]
 })
 export class FooterComponent {
+  auth=inject(AuthService);
+  user:any;
+  ngOnInit() {
+    this.auth.readAuthUser().then(user => {
+      this.user=user;
+    });
+
+  }
 
   selectedButton = 'welcome';
   @Output() footerClick = new EventEmitter<string>();

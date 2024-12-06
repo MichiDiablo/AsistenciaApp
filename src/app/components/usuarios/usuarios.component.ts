@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, inject } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { User } from 'src/app/model/user';
 import { showAlert,showAlertYesNo,showAlertError,showToast } from 'src/app/tools/message-functions';
@@ -26,26 +26,25 @@ import { addIcons } from 'ionicons';
 })
 export class UsuariosComponent implements OnInit {
   users: User[] = [];
-  isAdmin: boolean = false; 
-  constructor(private authService: AuthService, private dbService: DatabaseService) {}
-
-  async ngOnInit() {
-    const currentUser = await this.authService.readAuthUser();
-    this.isAdmin = currentUser?.userName === 'admin';
+  auth=inject(AuthService);
+  user:any;
+  constructor(private authService: AuthService, private dbService: DatabaseService) {
     this.loadUsers();
   }
 
+  
+   ngOnInit() {}
+
+
   async loadUsers() {
-    try {
-      this.users = await this.dbService.readUsers();
-    } catch (error) {
-      await showAlertError('UsuariosComponent.loadUsers', error);
-    }
+    this.dbService.readUsers().then(users => {
+      this.users = users;
+    });
   }
 
   /**
    * 
-   * @param userName - 
+   * @param userrole  
    */
   async confirmDelete(userName: string) {
     try {

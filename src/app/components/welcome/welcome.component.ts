@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
   standalone: true,
-  imports: [TranslateModule, IonButton]
+  imports: [TranslateModule, IonButton,CommonModule]
 })
 export class WelcomeComponent implements OnInit {
 
@@ -22,7 +22,7 @@ export class WelcomeComponent implements OnInit {
 
   constructor(private auth: AuthService) { 
     this.auth.authUser.subscribe((user) => {
-      console.log(user);
+      // console.log(user);
       if (user) {
         this.user = user;
       }

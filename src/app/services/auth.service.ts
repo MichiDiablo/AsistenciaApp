@@ -71,7 +71,7 @@ export class AuthService {
     }
   }
 
-  async login(userName: string, password: string): Promise<boolean> {
+  async login(userName: string, password: string ): Promise<boolean> {
     try {
       const authUser = await this.storage.get(this.storageAuthUserKey);
 

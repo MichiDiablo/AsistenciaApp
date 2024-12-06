@@ -9,17 +9,15 @@
         <ion-icon name="map-outline" color="light"></ion-icon>
       </ion-button>
 
-      <ion-button (click)="sendClickEvent('scan')" size="small" fill="clear">
+      <ion-button *ngIf="user?.role==0" (click)="sendClickEvent('scan')" size="small" fill="clear">
         <ion-icon name="qr-code-outline" color="light"></ion-icon>
       </ion-button>
 
       <ion-button id="logout" (click)="logout()" size="small" fill="clear">
         <ion-icon name="log-out-outline" color="light"></ion-icon>
       </ion-button>
+
     </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <app-usuarios *ngIf="isAdmin"></app-usuarios>
-</ion-content>

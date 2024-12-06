@@ -15,7 +15,7 @@
         {{ "HomePage.Button.Data" | translate }}
       </ion-segment-button>
 
-      <ion-segment-button value="dinosaur">
+      <ion-segment-button *ngIf="user?.role==0" value="dinosaur">
         <ion-icon name="book-outline"></ion-icon>
         {{ "HomePage.Button.Class" | translate }}
       </ion-segment-button>
@@ -24,8 +24,11 @@
         <ion-icon name="pencil-outline"></ion-icon>
         {{ "HomePage.Button.Forum" | translate }}
       </ion-segment-button>
-
       
+      <ion-segment-button *ngIf="user?.role==1" value="usuarios">
+        <ion-icon name="pencil-outline"></ion-icon>
+        {{ "HomePage.Button.Forum" | translate }}
+      </ion-segment-button>
 
     </ion-segment>
 

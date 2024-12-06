@@ -10,7 +10,7 @@
     </ion-button>
   </div>
 
-  <div class="ion-text-center">
+  <div *ngIf="user?.role==0" class="ion-text-center">
     <ion-button (click)="sendClickEvent('scan')">
       {{ "WelcomePage.Button.Scan" | translate }}
     </ion-button>
