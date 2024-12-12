@@ -2,19 +2,11 @@
   "posts": [
     {
       "id": "1",
-      "title": "El Rey de los Dinosaurios: Tiranosaurio Rex",
-      "body": "Exploramos la vida y características del poderoso Tiranosaurio Rex.",
+      "title": "Publicación de Prueba Actualizada 566",
+      "body": "Contenido actualizado",
       "author": "Juan Pérez",
-      "date": "27/10/2024",
-      "authorImage": "https://example.com/images/juan_perez.jpg"
-    },
-    {
-      "id": "2",
-      "title": "Los Dinosaurios del Jurásico",
-      "body": "Una mirada a los dinosaurios más icónicos de la era Jurásica.",
-      "author": "Carla Mujica",
-      "date": "27/10/2024",
-      "authorImage": "https://example.com/images/carla_mujica.jpg"
+      "date": "14/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
     },
     {
       "id": "3",
@@ -71,6 +63,46 @@
       "author": "Ana Torres",
       "date": "27/10/2024",
       "authorImage": "https://example.com/images/ana_torres.jpg"
+    },
+    {
+      "id": "6a73",
+      "title": "Título de prueba 858374",
+      "body": "Contenido de prueba 858374",
+      "author": "Ana Torres",
+      "date": "",
+      "authorImage": ""
+    },
+    {
+      "id": "1e42",
+      "title": "Título de prueba 301544",
+      "body": "Contenido de prueba 301544",
+      "author": "Ana Torres",
+      "date": "",
+      "authorImage": ""
+    },
+    {
+      "id": "fe19",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
+    },
+    {
+      "id": "fcfb",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
+    },
+    {
+      "id": "00e7",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
     }
   ]
 }

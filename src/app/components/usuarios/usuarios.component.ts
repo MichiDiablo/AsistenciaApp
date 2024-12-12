@@ -28,6 +28,7 @@ export class UsuariosComponent implements OnInit {
   users: User[] = [];
   auth=inject(AuthService);
   user:any;
+  
   constructor(private authService: AuthService, private dbService: DatabaseService) {
     addIcons({trashOutline})
     this.loadUsers();
