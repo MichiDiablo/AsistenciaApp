@@ -10,7 +10,9 @@ import { APIClientService } from 'src/app/services/apiclient.service';
 import { EducationalLevel } from 'src/app/model/educational-level';
 import { showToast } from 'src/app/tools/message-functions';
 import { DatePickerComponent } from '../date-picker/date-picker.component';
-import { TranslateModule } from '@ngx-translate/core'; 
+import { TranslateModule } from '@ngx-translate/core';
+import { createAnimation } from '@ionic/angular';
+import { trigger, state, style, transition, animate } from '@angular/animations'; 
 
 @Component({
   selector: 'app-mis-datos',
@@ -48,9 +50,24 @@ export class MisDatosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.animateWelcomeMessage();
 
   }
-
+  animateWelcomeMessage() {
+    const element = document.querySelector('h3'); // Selecciona el elemento <h3>
+  
+    if (element) {
+      const animation = createAnimation()
+        .addElement(element) // Solo pasa el elemento si no es null
+        .duration(3000)
+        .iterations(1)
+        .fromTo('opacity', '0', '1')
+        .fromTo('transform', 'translateY(-20px)', 'translateY(0)');
+      animation.play(); // Reproduce la animación
+    } else {
+      console.error('El elemento <h3> no se encontró en el DOM.');
+    }
+  }
   guardarUsuario() {
     if (this.usuario.firstName.trim() === '') {
       showToast('El usuario debe tener un nombre');

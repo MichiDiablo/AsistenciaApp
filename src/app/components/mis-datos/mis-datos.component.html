@@ -1,9 +1,10 @@
 
 <ion-content [fullscreen]="true">
-  
-  <div>
-    <h3> Bienvenido(a) a tus datos {{ usuario.firstName }} {{ usuario.lastName }} </h3>
-  </div>
+      <img class="background-image" src="/assets/images/Fondo.jpg">
+      <div>
+            <h3>{{ "WelcomePage.Title.WelcomeToYourData" | translate }} 
+            {{ usuario.firstName }} {{ usuario.lastName }}</h3>
+      </div>
 
   <ion-item><ion-input label="Cuenta" labelPlacement="floating"
         [(ngModel)]="usuario.userName"></ion-input></ion-item>
