@@ -8,7 +8,7 @@
     "Language.Mapudungun": "Mapudungun",
     
     "Start.StartNewExperience": "Start a new experience",
-
+  
     "Login.Title.Login": "Login",
     "Login.Label.Email": "Email",
     "Login.Placeholder.Email": "Enter your email here",
@@ -18,19 +18,19 @@
     "Login.Button.Signin": "Sign Up",
     "Login.Button.ForgotPassword": "Forgot my password",
     "Login.Button.DarkMode": "Dark Mode",
-
+  
     "WelcomePage.Title.Welcome": "Welcome to DUOC Attendance App",
     "WelcomePage.Title.WelcomeToYourData": "Welcome to your data",
     "WelcomePage.Button.Map": "Are you running late? Check the map here",
     "WelcomePage.Button.Scan": "Scan the QR here",
-
+  
     "HomePage.Button.Wellcome": "Home",
     "HomePage.Button.Scan": "Scan",
     "HomePage.Button.MisDatos": "My Data",
     "HomePage.Button.Forum": "Forum",
     "HomePage.Button.Data": "My data",
     "HomePage.Button.Class": "My class",
-
+  
     "ThemePage.Label.ColorTheme": "Color Theme:",
     "ThemePage.Color.Light": "Light",
     "ThemePage.Color.Dark": "Dark",
@@ -69,7 +69,7 @@
     "ThemePage.Form.DescriptionPlaceholder": "Write a description here...",
     "ThemePage.Form.ToggleLabel": "Enable notifications",
     "ThemePage.Form.CheckboxLabel": "I accept the terms",
-
+  
     "QRPage.Sede": "Campus:",
     "QRPage.IdAsignatura": "Course ID:",
     "QRPage.Seccion": "Section:",
@@ -81,42 +81,52 @@
     "QRPage.HoraInicio": "Start Time:",
     "QRPage.HoraFin": "End Time:",
     "QRPage.ScanPrompt": "You must scan the QR",
-
+  
     "AdminUsers.Title": "Manage Users",
     "Logout.Button": "Log Out",
-
+  
     "PostManagement.Title": "Post Management",
     "PostManagement.TitleLabel": "Title",
     "PostManagement.DescriptionLabel": "Description",
     "PostManagement.Button.Clear": "Clear",
     "PostManagement.RecentPostsTitle": "Recent Posts",
     "PostManagement.Post": "Post",
-
+  
     "Map.DUOC": "DUOC",
     "Map.Here": "Here",
     "Map.Route": "Route",
-
+  
     "QR.StopScanning": "Stop QR Scanning",
-
+  
     "Operation.SuccessMessage": "Operation completed successfully!",
     "Operation.ActionCompleted": "Your action has been completed successfully.",
     "Operation.PasswordMessage": "Your password is:",
     "Operation.BackToHome": "Back to Home",
-
+  
     "Error.SorryMessage": "We're sorry, an error occurred!",
     "Error.InvalidCredentials": "Your email or password is incorrect. Please try again.",
     "Error.BackToHome": "Back to Home",
-
+  
     "SecurityQuestion.Theme": "Theme",
     "SecurityQuestion.Question": "Security Question:",
     "SecurityQuestion.Answer": "Answer:",
     "SecurityQuestion.Verify": "Verify",
-
+  
     "UserRegistration.Title": "User Registration",
+    "UserRegistration.UsernameLabel": "Account",
+    "UserRegistration.Username": "Username",
     "UserRegistration.UsernameRequired": "The username is required and must have at least 4 characters.",
+    "UserRegistration.EmailLabel": "Email",
     "UserRegistration.ValidEmail": "Enter a valid email.",
+    "UserRegistration.PasswordLabel": "Password",
     "UserRegistration.PasswordRequirement": "The password must have at least 6 characters.",
-    "UserRegistration.BirthDate": "Date of Birth",
+    "UserRegistration.SecretQuestionLabel": "Secret Question",
+    "UserRegistration.SecretAnswerLabel": "Secret Answer",
+    "UserRegistration.FirstNameLabel": "First Name",
+    "UserRegistration.LastNameLabel": "Last Name",
+    "UserRegistration.EducationalLevelLabel": "Education",
     "UserRegistration.Address": "Address",
-    "UserRegistration.RegisterUser": "Register User"
-}
+    "UserRegistration.SaveButton": "Save",
+    "UserRegistration.BirthDate": "Date of Birth"
+  }
+  

@@ -8,7 +8,7 @@
     "Language.Mapudungun": "Mapudungun",
     
     "Start.StartNewExperience": "Comienza una nueva experiencia",
-
+  
     "Login.Title.Login": "Iniciar sesión",
     "Login.Label.Email": "Correo",
     "Login.Placeholder.Email": "Ingresa aquí tu correo",
@@ -18,19 +18,19 @@
     "Login.Button.Signin": "Registrarse",
     "Login.Button.ForgotPassword": "Olvidé mi contraseña",
     "Login.Button.DarkMode": "Modo oscuro",
-
+  
     "WelcomePage.Title.Welcome": "¡Bienvenido(a) a Asistencia DUOC!",
     "WelcomePage.Title.WelcomeToYourData": "Bienvenido(a) a tus datos",
     "WelcomePage.Button.Map": "¿Vas atrasado? Chequea el mapa aquí",
     "WelcomePage.Button.Scan": "Escanea el QR aquí",
-
+  
     "HomePage.Button.Wellcome": "Inicio",
     "HomePage.Button.Scan": "Escanear",
     "HomePage.Button.MisDatos": "Mis datos",
     "HomePage.Button.Forum": "Foro",
     "HomePage.Button.Data": "Mis datos",
     "HomePage.Button.Class": "Mi clase",
-
+  
     "ThemePage.Label.ColorTheme": "Tema de color:",
     "ThemePage.Color.Light": "Claro",
     "ThemePage.Color.Dark": "Oscuro",
@@ -69,7 +69,7 @@
     "ThemePage.Form.DescriptionPlaceholder": "Escribe aquí una descripción...",
     "ThemePage.Form.ToggleLabel": "Activar notificaciones",
     "ThemePage.Form.CheckboxLabel": "Acepto los términos",
-
+  
     "QRPage.Sede": "Sede:",
     "QRPage.IdAsignatura": "ID Asignatura:",
     "QRPage.Seccion": "Sección:",
@@ -81,41 +81,52 @@
     "QRPage.HoraInicio": "Hora de inicio:",
     "QRPage.HoraFin": "Hora de término:",
     "QRPage.ScanPrompt": "Debes escanear el QR",
-
+  
     "AdminUsers.Title": "Administrar Usuarios",
     "Logout.Button": "Cerrar sesión",
-
+  
     "PostManagement.Title": "Gestión de Publicaciones",
     "PostManagement.TitleLabel": "Título",
     "PostManagement.DescriptionLabel": "Descripción",
     "PostManagement.Button.Clear": "Limpiar",
     "PostManagement.RecentPostsTitle": "Publicaciones Recientes",
     "PostManagement.Post": "Publicación",
-
-    
+  
     "Map.DUOC": "DUOC",
     "Map.Here": "Aquí",
     "Map.Route": "Ruta",
-
+  
     "Operation.SuccessMessage": "¡Operación realizada correctamente!",
     "Operation.ActionCompleted": "Tu acción se ha completado exitosamente.",
     "Operation.PasswordMessage": "Tu contraseña es:",
     "Operation.BackToHome": "Volver al Inicio",
-
+  
     "Error.SorryMessage": "¡Lo sentimos, ocurrió un error!",
     "Error.InvalidCredentials": "Tu correo o contraseña son incorrectos. Por favor, intenta nuevamente.",
     "Error.BackToHome": "Volver al Inicio",
-
+  
     "SecurityQuestion.Theme": "Tema",
     "SecurityQuestion.Question": "Pregunta de seguridad:",
     "SecurityQuestion.Answer": "Respuesta:",
     "SecurityQuestion.Verify": "Verificar",
-
+  
     "UserRegistration.Title": "Registro de Usuario",
+    "UserRegistration.UsernameLabel": "Cuenta",
+    "UserRegistration.Username": "usuario",
     "UserRegistration.UsernameRequired": "El nombre de usuario es obligatorio y debe tener al menos 4 caracteres.",
+    "UserRegistration.EmailLabel": "Correo",
     "UserRegistration.ValidEmail": "Ingresa un correo válido.",
+    "UserRegistration.PasswordLabel": "Contraseña",
     "UserRegistration.PasswordRequirement": "La contraseña debe tener al menos 6 caracteres.",
-    "UserRegistration.BirthDate": "Fecha de Nacimiento",
+    "UserRegistration.SecretQuestionLabel": "Pregunta secreta",
+    "UserRegistration.SecretAnswerLabel": "Respuesta secreta",
+    "UserRegistration.FirstNameLabel": "Nombre",
+    "UserRegistration.LastNameLabel": "Apellido",
+    "UserRegistration.EducationalLevelLabel": "Educación",
     "UserRegistration.Address": "Dirección",
-    "UserRegistration.RegisterUser": "Registrar Usuario"
-}
+    "UserRegistration.SaveButton": "Guardar",
+    "UserRegistration.BirthDate": "Fecha de Nacimiento"
+
+    
+  }
+  

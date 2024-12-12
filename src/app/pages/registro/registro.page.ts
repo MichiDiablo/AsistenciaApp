@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DatabaseService } from 'src/app/services/database.service'; 
+import { DatabaseService } from 'src/app/services/database.service';
 import { User } from 'src/app/model/user';
 import { EducationalLevel } from 'src/app/model/educational-level';
-import { showAlertError, showSysAlert } from 'src/app/tools/message-functions'; 
+import { showAlertError, showSysAlert } from 'src/app/tools/message-functions';
 import {
   IonContent,
   IonHeader,
@@ -15,8 +15,7 @@ import {
   IonSelect,
   IonSelectOption,
   IonDatetime,
-  IonButton
-} from '@ionic/angular/standalone';
+  IonButton, IonLabel } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -26,7 +25,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonLabel, 
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -45,7 +44,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ]
 })
 export class RegistroPage implements OnInit {
-  registerForm!: FormGroup; 
+  registerForm!: FormGroup;
   listaNivelesEducacionales = [
     { id: 1, name: 'Primaria' },
     { id: 2, name: 'Secundaria' },
@@ -54,8 +53,8 @@ export class RegistroPage implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private databaseService: DatabaseService 
-  ) { }
+    private databaseService: DatabaseService
+  ) {}
 
   ngOnInit() {
     this.registerForm = this.fb.group({
@@ -74,7 +73,10 @@ export class RegistroPage implements OnInit {
 
   async registrarUsuario() {
     if (this.registerForm.invalid) {
-      await showAlertError('Formulario Inválido', 'Por favor completa todos los campos correctamente.');
+      await showAlertError(
+        'Formulario Inválido',
+        'Por favor completa todos los campos correctamente.'
+      );
       return;
     }
 
@@ -95,17 +97,28 @@ export class RegistroPage implements OnInit {
     );
 
     try {
-      const existingUser = await this.databaseService.findUserByEmail(userData.email);
+      const existingUser = await this.databaseService.findUserByEmail(
+        userData.email
+      );
       if (existingUser) {
-        await showAlertError('Registro Fallido', 'Ya existe un usuario con este correo.');
+        await showAlertError(
+          'Registro Fallido',
+          'Ya existe un usuario con este correo.'
+        );
         return;
       }
 
       await this.databaseService.saveUser(newUser);
-      await showSysAlert('Registro Exitoso', 'El usuario ha sido registrado correctamente.');
+      await showSysAlert(
+        'Registro Exitoso',
+        'El usuario ha sido registrado correctamente.'
+      );
       this.registerForm.reset();
     } catch (error) {
-      await showAlertError('Error', 'Ocurrió un error al registrar el usuario. Por favor intenta nuevamente.');
+      await showAlertError(
+        'Error',
+        'Ocurrió un error al registrar el usuario. Por favor intenta nuevamente.'
+      );
     }
   }
 

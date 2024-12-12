@@ -8,7 +8,7 @@
     "Language.Mapudungun": "Mapudungun",
     
     "Start.StartNewExperience": "Eymi müley kiñe küpan trawün",
-
+  
     "Login.Title.Login": "Wüñolün",
     "Login.Label.Email": "E-mail",
     "Login.Placeholder.Email": "Eymi mülen teu e-mail",
@@ -18,19 +18,19 @@
     "Login.Button.Signin": "Trawünme",
     "Login.Button.ForgotPassword": "Ñi rakinmapu elañmafi",
     "Login.Button.DarkMode": "Pewma külen müleyin",
-
+  
     "WelcomePage.Title.Welcome": "¡Tüfachi mülenmi Asistencia DUOC!",
     "WelcomePage.Title.WelcomeToYourData": "Tüfachi müley ñi dungu",
     "WelcomePage.Button.Map": "¿Müley kiñe peney ka? Eymi müpelnge mapan tüfachi",
     "WelcomePage.Button.Scan": "Müpelnge tüfachi QR",
-
+  
     "HomePage.Button.Welcome": "Wüña",
     "HomePage.Button.Scan": "Wütran",
     "HomePage.Button.MisDatos": "Ñi Dungu",
     "HomePage.Button.Forum": "Trapu",
     "HomePage.Button.Data": "Ñi rakizuam",
     "HomePage.Button.Class": "Kimeltuwün",
-
+  
     "ThemePage.Label.ColorTheme": "Dugün de kolor:",
     "ThemePage.Color.Light": "Külfün",
     "ThemePage.Color.Dark": "Pewma",
@@ -50,7 +50,7 @@
     "ThemePage.Button.Dark": "Kutral Pewma",
     "ThemePage.Button.Home": "Wüña",
     "ThemePage.Button.Logout": "Tuway",
-
+  
     "ThemePage.Card.Title": "Tüfachi Rakin Tarjeta",
     "ThemePage.Card.Subtitle": "Epü Rakin Tarjeta",
     "ThemePage.Card.Content": "Tüfachi mülen rakin tarjetan. Eymü tayüwme kolores tami tarjeta ka mülen rakin.",
@@ -69,7 +69,7 @@
     "ThemePage.Form.DescriptionPlaceholder": "Eymi mülen ta püllün...",
     "ThemePage.Form.ToggleLabel": "Külfünon notificaciones",
     "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi",
-
+  
     "QRPage.Sede": "Ruka:",
     "QRPage.IdAsignatura": "ID Kimeltuwün:",
     "QRPage.Seccion": "Witral:",
@@ -81,40 +81,47 @@
     "QRPage.HoraInicio": "Püle hora:",
     "QRPage.HoraFin": "Rume hora:",
     "QRPage.ScanPrompt": "Ütüfülem müten QR",
-
+  
     "AdminUsers.Title": "Kimünfe Wece",
     "Logout.Button": "Tuway",
-
+  
     "PostManagement.Title": "Wece Ülkan",
     "PostManagement.TitleLabel": "Wüñam",
     "PostManagement.DescriptionLabel": "Püllün",
     "PostManagement.Button.Clear": "Elimikan",
     "PostManagement.RecentPostsTitle": "Wece Ülkan Tüfachi",
     "PostManagement.Post": "Ülkan",
-
+  
     "Map.DUOC": "DUOC",
     "Map.Here": "Tüfachi",
     "Map.Route": "Rüpü",
-
+  
     "Operation.SuccessMessage": "Tüfachi rakin müley küme kimün!",
     "Operation.ActionCompleted": "Eymi rakin ka tüfachi müley küme kimün.",
     "Operation.PasswordMessage": "Ñi rakinmapu müley:",
     "Operation.BackToHome": "Tüway ñi Wüña",
-
+  
     "Error.SorryMessage": "Küme küdaw ñi rakin, kiñe error müley!",
     "Error.InvalidCredentials": "Eymi e-mail ka rakinmapu elañmafi. Eymi pewkantufe.",
     "Error.BackToHome": "Tüway ñi Wüña",
-
+  
     "SecurityQuestion.Theme": "Dugün",
     "SecurityQuestion.Question": "Rakin küme pewma:",
     "SecurityQuestion.Answer": "Wüña:",
     "SecurityQuestion.Verify": "Külfün",
-
+  
     "UserRegistration.Title": "Üñoyan Rakin",
+    "UserRegistration.Username": "Rakinfe",
     "UserRegistration.UsernameRequired": "Üñoyan zugun müley nien rume 4 ütrün tüfachi.",
     "UserRegistration.ValidEmail": "Eymi mülen kiñe küme e-mail.",
     "UserRegistration.PasswordRequirement": "Rakinmapu müley nien rume 6 ütrün tüfachi.",
-    "UserRegistration.BirthDate": "We tripantü",
+    "UserRegistration.SecretQuestionLabel": "Rakin küme pewma",
+    "UserRegistration.SecretAnswerLabel": "Wüña",
+    "UserRegistration.FirstNameLabel": "Kiñe zugun",
+    "UserRegistration.LastNameLabel": "Küla zugun",
+    "UserRegistration.EducationalLevelLabel": "Kimeltuwün Zugun",
     "UserRegistration.Address": "Ruka Dungu",
-    "UserRegistration.RegisterUser": "Üñoyañ Rakin"
-}
+    "UserRegistration.SaveButton": "Külfün",
+    "UserRegistration.BirthDate": "We Tripantü"
+  }
+  

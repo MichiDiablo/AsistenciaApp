@@ -88,6 +88,7 @@ export class CorreoPage implements ViewWillEnter {
         };
         await this.router.navigate(['pregunta'], navigationExtras);
       } else {
+        this.router.navigate(['incorrecto']);
         showToast('No existe una cuenta registrada con ese correo.');
       }
     } catch (error) {

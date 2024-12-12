@@ -11,7 +11,7 @@
     <ion-item>
       <ion-input
         formControlName="userName"
-        label="Nombre de Usuario"
+        label="{{ 'UserRegistration.UsernameLabel' | translate }}"
         labelPlacement="floating"
         type="text">
       </ion-input>
@@ -24,7 +24,7 @@
     <ion-item>
       <ion-input
         formControlName="email"
-        label="Correo Electrónico"
+        label="{{ 'UserRegistration.EmailLabel' | translate }}"
         labelPlacement="floating"
         type="email">
       </ion-input>
@@ -37,7 +37,7 @@
     <ion-item>
       <ion-input
         formControlName="password"
-        label="Contraseña"
+        label="{{ 'UserRegistration.PasswordLabel' | translate }}"
         labelPlacement="floating"
         type="password">
       </ion-input>
@@ -50,7 +50,7 @@
     <ion-item>
       <ion-input
         formControlName="secretQuestion"
-        label="Pregunta Secreta"
+        label="{{ 'UserRegistration.SecretQuestionLabel' | translate }}"
         labelPlacement="floating">
       </ion-input>
     </ion-item>
@@ -59,7 +59,7 @@
     <ion-item>
       <ion-input
         formControlName="secretAnswer"
-        label="Respuesta Secreta"
+        label="{{ 'UserRegistration.SecretAnswerLabel' | translate }}"
         labelPlacement="floating">
       </ion-input>
     </ion-item>
@@ -68,7 +68,7 @@
     <ion-item>
       <ion-input
         formControlName="firstName"
-        label="Nombre"
+        label="{{ 'UserRegistration.FirstNameLabel' | translate }}"
         labelPlacement="floating">
       </ion-input>
     </ion-item>
@@ -77,7 +77,7 @@
     <ion-item>
       <ion-input
         formControlName="lastName"
-        label="Apellido"
+        label="{{ 'UserRegistration.LastNameLabel' | translate }}"
         labelPlacement="floating">
       </ion-input>
     </ion-item>
@@ -86,7 +86,7 @@
     <ion-item>
       <ion-select
         formControlName="educationalLevel"
-        label="Nivel Educacional"
+        label="{{ 'UserRegistration.EducationalLevelLabel' | translate }}"
         labelPlacement="floating">
         <ion-select-option *ngFor="let nivel of listaNivelesEducacionales" [value]="nivel.id">
           {{ nivel.name }}
@@ -95,21 +95,18 @@
     </ion-item>
 
     <!-- Fecha de Nacimiento -->
-    <div class="section-title">{{ "UserRegistration.BirthDate" | translate }}</div>
     <ion-item>
+      <!-- <ion-label>{{ "UserRegistration.BirthDate" | translate }}</ion-label> -->
       <ion-datetime
         formControlName="dateOfBirth"
-        label="Fecha de Nacimiento"
-        labelPlacement="floating">
-      </ion-datetime>
+        presentation="date"></ion-datetime>
     </ion-item>
 
     <!-- Dirección -->
-    <div class="section-title">{{ "UserRegistration.Address" | translate }}</div>
     <ion-item>
       <ion-input
         formControlName="address"
-        label="Dirección"
+        label="{{ 'UserRegistration.Address' | translate }}"
         labelPlacement="floating">
       </ion-input>
     </ion-item>
