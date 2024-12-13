@@ -60,6 +60,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              
+              "optimization": true,
               "outputHashing": "all"
             },
             "development": {
