@@ -1,5 +1,6 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+// @import "../global.scss";
 
 :root {
 	--ion-color-primary: hsl(218, 100%, 46%);
@@ -462,3 +463,4 @@ body[color-theme='duoc'] {
     --ion-color-dark-tint: #383838;
      
 }
+
