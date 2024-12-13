@@ -1,10 +1,10 @@
-César Antonio Palacios Pulgar              Sec: 03D    
+César Antonio Palacios Pulgar  Sec: 03D    
 
-Nicolas Anakin Cartes Gonzalez            Sec: 02D 
+Nicolas Anakin Cartes Gonzalez  Sec: 02D 
 
-Patricia Andrea Cavieres Navarro         Sec: 03D 
+Patricia Andrea Cavieres Navarro Sec: 03D 
 
-Marion Andrea Granifo Gonzalez 01D
+Marion Andrea Granifo Gonzalez  Sec: 01D
 
 
 
