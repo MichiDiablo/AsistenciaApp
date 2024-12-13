@@ -81,6 +81,7 @@
     "QRPage.HoraInicio": "Start Time:",
     "QRPage.HoraFin": "End Time:",
     "QRPage.ScanPrompt": "You must scan the QR",
+    
   
     "AdminUsers.Title": "Manage Users",
     "Logout.Button": "Log Out",

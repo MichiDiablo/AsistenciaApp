@@ -81,6 +81,7 @@
     "QRPage.HoraInicio": "Hora de inicio:",
     "QRPage.HoraFin": "Hora de término:",
     "QRPage.ScanPrompt": "Debes escanear el QR",
+    "QR.StopScanning": "Detener escaner",
   
     "AdminUsers.Title": "Administrar Usuarios",
     "Logout.Button": "Cerrar sesión",

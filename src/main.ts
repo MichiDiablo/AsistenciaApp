@@ -94,7 +94,7 @@ bootstrapApplication(AppComponent, {
       useFactory: initializeFactory,
       deps: [InitializeService],
       multi: true
-    }, provideAnimationsAsync(), provideAnimationsAsync()
+    }, provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync()
     // CGV-FIN-BASE-DATOS
 
   ],
