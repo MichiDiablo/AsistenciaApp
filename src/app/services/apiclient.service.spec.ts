@@ -62,7 +62,7 @@ describe('APIClientService (Integración con JSON Server)', () => {
 
   it('Debería actualizar un post existente en JSON Server', async () => {
     const updateData = {
-      id: 1,
+      id: 3,
       title: `Publicación de Prueba Actualizada ${Math.floor(Math.random() * 1000)}`,
       body: "Contenido actualizado",
       author: "Juan Pérez",
@@ -78,7 +78,7 @@ describe('APIClientService (Integración con JSON Server)', () => {
   });
 
   it('Debería eliminar un post en JSON Server', async () => {
-    const deleteResponse = await service.deletePost(2); // Aquí usamos el id 10 como ejemplo
+    const deleteResponse = await service.deletePost(4); // Aquí usamos el id 10 como ejemplo
     debugger
     expect(deleteResponse).toBeDefined();
     expect(deleteResponse).toBeTruthy();

@@ -11,4 +11,4 @@ echo.
 
 echo.
 
-ionic cap run android -l --external --host=192.168.5.72 --port=8100 --target RF8T205NQKJ
+ionic cap run android -l --external --host=192.168.237.72 --port=8200 --target RF8T205NQKJ

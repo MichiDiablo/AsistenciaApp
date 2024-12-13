@@ -1,28 +1,12 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "Publicación de Prueba Actualizada 566",
+      "id": "3",
+      "title": "Publicación de Prueba Actualizada 898",
       "body": "Contenido actualizado",
       "author": "Juan Pérez",
       "date": "14/11/2024",
       "authorImage": "https://example.com/images/autor_prueba.jpg"
-    },
-    {
-      "id": "3",
-      "title": "¿Cómo se extinguieron los dinosaurios?",
-      "body": "Investigamos las teorías sobre la extinción de los dinosaurios hace 65 millones de años.",
-      "author": "Ana Torres",
-      "date": "27/10/2024",
-      "authorImage": "https://example.com/images/ana_torres.jpg"
-    },
-    {
-      "id": "4",
-      "title": "El Velociraptor: Más pequeño, pero mortal",
-      "body": "Descubre la agilidad y ferocidad de este pequeño dinosaurio carnívoro.",
-      "author": "Juan Pérez",
-      "date": "27/10/2024",
-      "authorImage": "https://example.com/images/juan_perez.jpg"
     },
     {
       "id": "5",
@@ -65,23 +49,7 @@
       "authorImage": "https://example.com/images/ana_torres.jpg"
     },
     {
-      "id": "6a73",
-      "title": "Título de prueba 858374",
-      "body": "Contenido de prueba 858374",
-      "author": "Ana Torres",
-      "date": "",
-      "authorImage": ""
-    },
-    {
-      "id": "1e42",
-      "title": "Título de prueba 301544",
-      "body": "Contenido de prueba 301544",
-      "author": "Ana Torres",
-      "date": "",
-      "authorImage": ""
-    },
-    {
-      "id": "fe19",
+      "id": "cae9",
       "title": "Publicación de Prueba",
       "body": "Contenido nuevo",
       "author": "Juan Pérez",
@@ -89,7 +57,7 @@
       "authorImage": "https://example.com/images/autor_prueba.jpg"
     },
     {
-      "id": "fcfb",
+      "id": "e972",
       "title": "Publicación de Prueba",
       "body": "Contenido nuevo",
       "author": "Juan Pérez",
@@ -97,7 +65,47 @@
       "authorImage": "https://example.com/images/autor_prueba.jpg"
     },
     {
-      "id": "00e7",
+      "id": "7227",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
+    },
+    {
+      "id": "e895",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
+    },
+    {
+      "id": "1d27",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
+    },
+    {
+      "id": "76b5",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
+    },
+    {
+      "id": "797c",
+      "title": "Publicación de Prueba",
+      "body": "Contenido nuevo",
+      "author": "Juan Pérez",
+      "date": "13/11/2024",
+      "authorImage": "https://example.com/images/autor_prueba.jpg"
+    },
+    {
+      "id": "62c0",
       "title": "Publicación de Prueba",
       "body": "Contenido nuevo",
       "author": "Juan Pérez",

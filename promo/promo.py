@@ -2,7 +2,7 @@
 from flask import Flask, render_template, redirect
 
 
-ip_servidor = "172.20.10.5"
+ip_servidor = "192.168.237.72"
 url_servidor = "http://" + ip_servidor + ":5000"
 
 app = Flask(__name__)
